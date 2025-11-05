@@ -1,0 +1,41 @@
+:root {
+    --main-bg-color: #f0f0f0;
+    --main-text-color: #333333;
+    --number-of-columns: 12;
+}
+
+#albumCont {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(var(--number-of-columns), 1fr);
+    background-color: brown;
+}
+
+#albumCont img, #albumCont div {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+.reviewText {
+    width: 300px;
+    background: #222;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    max-height: 3.5em; /* viser ca. to linjer */
+    transition: max-height 0.3s ease;
+}
+
+.reviewText.expanded {
+    max-height: 1000px; /* utvid når trykket */
+  }
+
+/* 
+Designe først albumBox
+Lage en container for basic setup, AlbumCont er til dynamisk
+Jeg vil styre --number-of-columns fra nettsiden
+Det skal funke på mobil
+test
+ */
