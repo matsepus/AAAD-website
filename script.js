@@ -29,6 +29,7 @@ const coverI = document.getElementById('coverURLInput');
 const revI = document.getElementById('reviewInput');
 const linkI = document.getElementById('linkInput');
 const inbtn = document.getElementById('inputBtn');
+inbtn.addEventListener("click", sendInput());
 
 const reviews = document.querySelectorAll('.reviewText'); 
 
