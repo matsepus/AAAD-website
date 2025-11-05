@@ -29,7 +29,14 @@ const coverI = document.getElementById('coverURLInput');
 const revI = document.getElementById('reviewInput');
 const linkI = document.getElementById('linkInput');
 const inbtn = document.getElementById('inputBtn');
-inbtn.addEventListener("click", sendInput);
+if (inbtn) {
+  inbtn.addEventListener("click", async () => {
+    console.log("Button clicked");
+    await sendInput();
+  });
+} else {
+  console.error("Button not found!");
+}
 
 const reviews = document.querySelectorAll('.reviewText'); 
 
