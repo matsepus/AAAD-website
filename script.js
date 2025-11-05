@@ -35,13 +35,16 @@ async function testFirestore() {
 // Call the function to test writing
 testFirestore();
 
+
+
 const albumParent = document.getElementById('albumCont'); 
 
-const btn = document.getElementById('addItemBtn');
-const titleInput = document.getElementById('titleInput');
-const reviewInput = document.getElementById('reviewInput');
-const imgInput = document.getElementById('imgInput');
-const linkInput = document.getElementById('linkInput');
+const alnI = document.getElementById('albumNameInput');
+const artnI =document.getElementById('artistNameInput');
+const coverI = document.getElementById('coverURLInput');
+const revI = document.getElementById('reviewInput');
+const linkI = document.getElementById('linkInput');
+const inbtn = document.getElementById('inputBtn');
 
 const reviews = document.querySelectorAll('.reviewText'); 
 
@@ -51,43 +54,3 @@ reviews.forEach(review => {
   });
 });
 
-btn.addEventListener('click', () => {
-  const title = titleInput.value.trim();
-  const review = reviewInput.value.trim();
-  const imgUrl = imgInput.value.trim();
-
-  if (!title || !review || !imgUrl) return; // nothing entered
-
-  // create the element
-  const itemDiv = document.createElement('div');
-  itemDiv.className = 'albumBox';
-
-    const linkUrl = linkInput.value.trim();
-    const a = document.createElement('a');
-    a.href =linkUrl;
-    a.target = '_blank';
-    itemDiv.appendChild(a);
-    
-    const img = document.createElement('img');
-    img.src = imgUrl;
-    img.alt = title;
-    a.appendChild(img);
-  
-
-
-    const h3 = document.createElement('h3');
-    h3.textContent = title;
-    itemDiv.appendChild(h3);
-
-
-    const p = document.createElement('p');
-    p.textContent = review;
-    itemDiv.appendChild(p);
-
-  albumParent.appendChild(itemDiv);
-
-  // clear inputs
-  titleInput.value = '';
-  reviewInput.value = '';
-  imgInput.value = '';
-});
