@@ -75,3 +75,19 @@ async function sendInput() {
     console.error("Error adding document: ", e);
   }
 }
+
+async function fetchAlbumCards() {
+  try {
+    const querySnapshot = await getDocs(collection(db, "albumCards"));
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      //createAlbumCard(data);
+      console.log(data);
+    });
+  }
+    catch (e) {
+    console.error("Error fetching documents: ", e);
+  }
+}
+
+fetchAlbumCards();
