@@ -41,11 +41,11 @@ reviews.forEach(review => {
 
     // Close currently open box if it’s not this one
     if (currentOpen && currentOpen !== content) {
-      currentOpen.classList.remove("open");
+      currentOpen.classList.remove("expanded");
     }
 
     // Toggle clicked box
-    const isOpen = content.classList.toggle("open");
+    const isOpen = content.classList.toggle("expanded");
     currentOpen = isOpen ? content : null;
   });
 });
