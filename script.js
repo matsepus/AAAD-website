@@ -19,20 +19,6 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app); // Firestore instance
 
-// Function to write to Firestore
-async function testFirestore() {
-  try {
-    const docRef = await addDoc(collection(db, "test_collection"), {
-      message: "Hello from my website!",
-      timestamp: new Date()
-    });
-    console.log("Document written with ID: ", docRef.id);
-  } catch (e) {
-    console.error("Error adding document: ", e);
-  }
-}
-
-
 
 
 const albumParent = document.getElementById('albumCont'); 
