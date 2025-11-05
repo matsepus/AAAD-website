@@ -44,16 +44,16 @@ let currentOpen = null;
 
 reviews.forEach(review => {
   review.addEventListener("click", () => {
-    const content = review.querySelector(".content");
+    const reviewText = review.querySelector(".reviewText");
 
     // Close currently open box if it’s not this one
-    if (currentOpen && currentOpen !== content) {
+    if (currentOpen && currentOpen !== reviewText) {
       currentOpen.classList.remove("expanded");
     }
 
     // Toggle clicked box
-    const isOpen = content.classList.toggle("expanded");
-    currentOpen = isOpen ? content : null;
+    const isOpen = reviewText.classList.toggle("expanded");
+    currentOpen = isOpen ? reviewText : null;
   });
 });
 
