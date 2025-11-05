@@ -32,11 +32,23 @@ const inbtn = document.getElementById('inputBtn');
 
 const reviews = document.querySelectorAll('.reviewText'); 
 
+let currentOpen = null;
+
 reviews.forEach(review => {
-  review.addEventListener('click', () => {
-    review.classList.toggle('expanded');
+  review.addEventListener("click", () => {
+    const content = review.querySelector(".content");
+
+    // Close currently open box if it’s not this one
+    if (currentOpen && currentOpen !== content) {
+      currentOpen.classList.remove("open");
+    }
+
+    // Toggle clicked box
+    const isOpen = content.classList.toggle("open");
+    currentOpen = isOpen ? content : null;
   });
 });
+
 
 async function sendInput() {
   console.log("Sending input to Firestore...");
