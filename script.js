@@ -39,6 +39,7 @@ reviews.forEach(review => {
 });
 
 async function sendInput() {
+  console.log("Sending input to Firestore...");
   try {
     const docRef = await addDoc(collection(db, "albumCards"), {
       albumName: alnI.value,
