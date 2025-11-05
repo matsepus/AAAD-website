@@ -51,4 +51,3 @@ reviews.forEach(review => {
     review.classList.toggle('expanded');
   });
 });
-
