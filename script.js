@@ -32,8 +32,6 @@ async function testFirestore() {
   }
 }
 
-// Call the function to test writing
-testFirestore();
 
 
 
