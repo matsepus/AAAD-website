@@ -51,3 +51,20 @@ reviews.forEach(review => {
     review.classList.toggle('expanded');
   });
 });
+
+async function sendInput() {
+  try {
+    const docRef = await addDoc(collection(db, "albumCards"), {
+      albumName: alnI.value,
+      artistName: artnI.value,
+      coverURL: coverI.value,
+      review: revI.value,
+      link: linkI.value,
+      timestamp: new Date()
+    });
+    console.log("Document written with ID: ", docRef.id);
+  }
+  catch (e) {
+    console.error("Error adding document: ", e);
+  }
+}
