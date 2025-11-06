@@ -25,7 +25,7 @@
     cursor: pointer;
     overflow: hidden;
     max-height: 3.5em; /* viser ca. to linjer */
-    transition: max-height 0.12s ease;
+    transition: max-height 0.7s ease;
 }
 
 .reviewText.expanded {
