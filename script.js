@@ -28,6 +28,7 @@ const artnI =document.getElementById('artistNameInput');
 const coverI = document.getElementById('coverURLInput');
 const revI = document.getElementById('reviewInput');
 const linkI = document.getElementById('linkInput');
+
 const inbtn = document.getElementById('inputBtn');
 if (inbtn) {
   inbtn.addEventListener("click", async () => {
@@ -38,22 +39,19 @@ if (inbtn) {
   console.error("Button not found!");
 }
 
-const reviews = document.querySelectorAll('.reviewText'); 
-
+const reviews = document.querySelectorAll(".reviewText");
 let currentOpen = null;
 
 reviews.forEach(review => {
   review.addEventListener("click", () => {
-    const reviewText = review.querySelector(".reviewText");
-
     // Close currently open box if it’s not this one
-    if (currentOpen && currentOpen !== reviewText) {
+    if (currentOpen && currentOpen !== review) {
       currentOpen.classList.remove("expanded");
     }
 
     // Toggle clicked box
-    const isOpen = reviewText.classList.toggle("expanded");
-    currentOpen = isOpen ? reviewText : null;
+    const isOpen = review.classList.toggle("expanded");
+    currentOpen = isOpen ? review : null;
   });
 });
 
