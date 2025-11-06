@@ -118,6 +118,8 @@ function makeAlbumCards(data) {
   albumCard.appendChild(albumName);
   albumCard.appendChild(artistName);
   albumCard.appendChild(reviewText);
+
+  location.reload
 }
 
 fetchAlbumCards();
