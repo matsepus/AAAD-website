@@ -80,12 +80,44 @@ async function fetchAlbumCards() {
     querySnapshot.forEach((doc) => {
       const data = doc.data();
       //createAlbumCard(data);
-      console.log(data);
+      makeAlbumCards(data);
     });
   }
     catch (e) {
     console.error("Error fetching documents: ", e);
   }
+}
+
+function makeAlbumCards(data) {
+  const albumCard = document.createElement('div');
+  albumCard.className = 'albumCard';
+
+  const link = document.createElement('a');
+  link.href = data.link;
+  link.target = "_blank";
+
+  const albumArt = document.createElement('img');
+  albumArt.className = 'albumArt';
+  albumArt.src = data.coverURL;
+
+  const albumName = document.createElement('div');
+  albumName.className = 'albumName';
+  albumName.textContent = data.albumName;
+
+  const artistName = document.createElement('div');
+  artistName.className = 'artistName';
+  artistName.textContent = data.artistName;
+
+  const reviewText = document.createElement('div');
+  reviewText.className = 'reviewText';
+  reviewText.textContent = data.review;
+
+  albumParent.appendChild(albumCard);
+  albumCard.appendChild(link);  
+  link.appendChild(albumArt);
+  albumCard.appendChild(albumName);
+  albumCard.appendChild(artistName);
+  albumCard.appendChild(reviewText);
 }
 
 fetchAlbumCards();
