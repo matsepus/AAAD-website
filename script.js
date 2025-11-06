@@ -39,22 +39,6 @@ if (inbtn) {
   console.error("Button not found!");
 }
 
-const reviews = document.querySelectorAll(".reviewText");
-let currentOpen = null;
-
-reviews.forEach(review => {
-  review.addEventListener("click", () => {
-    // Close currently open box if it’s not this one
-    if (currentOpen && currentOpen !== review) {
-      currentOpen.classList.remove("expanded");
-    }
-
-    // Toggle clicked box
-    const isOpen = review.classList.toggle("expanded");
-    currentOpen = isOpen ? review : null;
-  });
-});
-
 
 async function sendInput() {
   console.log("Sending input to Firestore...");
@@ -123,3 +107,21 @@ function makeAlbumCards(data) {
 }
 
 fetchAlbumCards();
+
+
+
+const reviews = document.querySelectorAll(".reviewText");
+let currentOpen = null;
+
+reviews.forEach(review => {
+  review.addEventListener("click", () => {
+    // Close currently open box if it’s not this one
+    if (currentOpen && currentOpen !== review) {
+      currentOpen.classList.remove("expanded");
+    }
+
+    // Toggle clicked box
+    const isOpen = review.classList.toggle("expanded");
+    currentOpen = isOpen ? review : null;
+  });
+});
