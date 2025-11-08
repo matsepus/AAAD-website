@@ -104,12 +104,13 @@ function makeAlbumCards(data) {
   albumCard.appendChild(reviewText);
 
   location.reload
+  addExpand();
 }
 
 fetchAlbumCards();
 
 
-
+function addExpand() {
 const reviews = document.querySelectorAll(".reviewText");
 let currentOpen = null;
 
@@ -125,3 +126,4 @@ reviews.forEach(review => {
     currentOpen = isOpen ? review : null;
   });
 });
+}
