@@ -41,6 +41,7 @@ if (inbtn) {
 
 
 async function sendInput() {
+  popupOverlay.style.display = "none";
   console.log("Sending input to Firestore...");
   try {
     const docRef = await addDoc(collection(db, "albumCards"), {
@@ -134,4 +135,11 @@ const sideMenu = document.getElementById("sideMenu");
 
 hamburgerDiv.addEventListener("click", () => {
   sideMenu.classList.toggle("expanded");
+});
+
+const openPopup = document.getElementById("openPopup");
+const popupOverlay = document.getElementById("popupOverlay");
+
+openPopup.addEventListener("click", () => {
+  popupOverlay.style.display = "block";
 });
