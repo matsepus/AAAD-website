@@ -42,7 +42,7 @@
 .sideMenu{
     position: fixed;
     top: 0;
-    right: -10em;
+    right: -100em;
     width: 25em;
     height: 100%;
     background-color: #333;
