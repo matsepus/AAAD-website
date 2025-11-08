@@ -32,6 +32,13 @@
     max-height: 1000px; /* utvid når trykket */
 }
 
+#hamburgerInner {
+    width: 30px;
+    height: 25px;
+    position: relative;
+    cursor: pointer;
+}
+
 .sideMenu{
     position: fixed;
     top: 0;
