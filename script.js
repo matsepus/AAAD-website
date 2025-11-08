@@ -141,5 +141,5 @@ const openPopup = document.getElementById("openPopup");
 const popupOverlay = document.getElementById("popupOverlay");
 
 openPopup.addEventListener("click", () => {
-  popupOverlay.style.display = "block";
+  popupOverlay.style.display = "flex";
 });
