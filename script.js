@@ -129,7 +129,7 @@ reviews.forEach(review => {
 });
 }
 
-const hamburgerDiv = document.getElementById("hamburger");
+const hamburgerDiv = document.getElementById("hamburgerDiv");
 const sideMenu = document.getElementById("sideMenu");
 
 
