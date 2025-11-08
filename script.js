@@ -131,6 +131,7 @@ reviews.forEach(review => {
 const hamburgerDiv = document.getElementById("hamburger");
 const sideMenu = document.getElementById("sideMenu");
 
-hamburger.addEventListener("click", () => {
+
+hamburgerDiv.addEventListener("click", () => {
   sideMenu.classList.toggle("expanded");
 });
