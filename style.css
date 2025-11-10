@@ -56,6 +56,14 @@
     right: 0;
 }
 
+#openPopup {
+    color: white;
+    padding: 1em;
+    background-color: #555;
+    text-align: center;
+    cursor: pointer;
+}
+
 #popupOverlay {
     position: fixed;
     top: 0;
