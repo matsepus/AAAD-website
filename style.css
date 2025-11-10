@@ -56,7 +56,7 @@
     right: 0;
 }
 
-#openPopup {
+#addEntry {
     color: white;
     padding: 1em;
     background-color: #555;
@@ -64,7 +64,7 @@
     cursor: pointer;
 }
 
-#popupOverlay {
+#addEntryOverlay {
     position: fixed;
     top: 0;
     left: 0;

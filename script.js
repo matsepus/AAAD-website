@@ -137,10 +137,10 @@ hamburgerDiv.addEventListener("click", () => {
   sideMenu.classList.toggle("expanded");
 });
 
-const openPopup = document.getElementById("openPopup");
-const popupOverlay = document.getElementById("popupOverlay");
+const addEntry = document.getElementById("addEntry");
+const addEntryOverlay = document.getElementById("addEntryOverlay");
 
-openPopup.addEventListener("click", () => {
+addEntry.addEventListener("click", () => {
   console.log("Opening popup");
-  popupOverlay.style.display = "flex";
+  addEntryOverlay.style.visibility = "visible";
 });
