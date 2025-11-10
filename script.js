@@ -141,5 +141,6 @@ const openPopup = document.getElementById("openPopup");
 const popupOverlay = document.getElementById("popupOverlay");
 
 openPopup.addEventListener("click", () => {
+  console.log("Opening popup");
   popupOverlay.style.display = "flex";
 });
