@@ -105,13 +105,13 @@ function makeAlbumCards(data) {
   albumCard.appendChild(reviewText);
 
   location.reload
-  addExpand();
+  addExpandReview();
 }
 
 fetchAlbumCards();
 
 
-function addExpand() {
+function addExpandReview() {
 const reviews = document.querySelectorAll(".reviewText");
 let currentOpen = null;
 
