@@ -142,5 +142,5 @@ const addEntryOverlay = document.getElementById("addEntryOverlay");
 
 addEntry.addEventListener("click", () => {
   console.log("Opening popup");
-  addEntryOverlay.style.visibility = "visible";
+  addEntryOverlay.style.display = "block";
 });
