@@ -143,4 +143,5 @@ const addEntryOverlay = document.getElementById("addEntryOverlay");
 addEntry.addEventListener("click", () => {
   console.log("Opening popup");
   addEntryOverlay.style.display = "block";
+  sideMenu.classList.toggle("expanded");
 });
