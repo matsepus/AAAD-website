@@ -39,6 +39,7 @@ if (inbtn) {
   console.error("Button not found!");
 }
 
+const popupOverlay = document.getElementById("addEntryOverlay");
 
 async function sendInput() {
   popupOverlay.style.display = "none";
@@ -142,6 +143,6 @@ const addEntryOverlay = document.getElementById("addEntryOverlay");
 
 addEntry.addEventListener("click", () => {
   console.log("Opening popup");
-  addEntryOverlay.style.display = "block";
+  addEntryOverlay.style.display = "flex";
   sideMenu.classList.toggle("expanded");
 });
