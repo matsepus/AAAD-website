@@ -29,6 +29,21 @@ const coverI = document.getElementById('coverURLInput');
 const revI = document.getElementById('reviewInput');
 const linkI = document.getElementById('linkInput');
 
+//Preview cover image functionality
+const preview = document.getElementById('preview');
+coverI.addEventListener('input', () => {
+    preview.src = coverI.value;
+    preview.style.visibility = 'visible';
+});
+
+// Auto-resize textarea
+function autoSize(el){
+    const fs = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    el.style.height = "auto";
+    el.style.height = (el.scrollHeight / fs)+"rem";
+}
+
+// Handle input button click
 const inbtn = document.getElementById('inputBtn');
 if (inbtn) {
   inbtn.addEventListener("click", async () => {
