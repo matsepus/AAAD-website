@@ -93,10 +93,6 @@ function makeAlbumCards(data) {
   const albumCard = document.createElement('div');
   albumCard.className = 'albumCard';
 
-  const link = document.createElement('a');
-  link.href = data.link;
-  link.target = "_blank";
-
   const albumArt = document.createElement('img');
   albumArt.className = 'albumArt';
   albumArt.src = data.coverURL;
@@ -114,8 +110,7 @@ function makeAlbumCards(data) {
   reviewText.textContent = data.review;
 
   albumParent.appendChild(albumCard);
-  albumCard.appendChild(link);  
-  link.appendChild(albumArt);
+  albumCard.appendChild(albumArt);
   albumCard.appendChild(albumName);
   albumCard.appendChild(artistName);
   albumCard.appendChild(reviewText);
