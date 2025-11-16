@@ -1,42 +1,42 @@
 :root {
-    --main-bg-color: #f0f0f0;
-    --main-text-color: #333333;
-    --number-of-columns: 12;
+    --main-bg-color: #f8f5f2;
+    --blue-accent: #141f45;
+    --orange-accent: #fa7b45;
+    --main-text-color: #d9d9d9;
+    --secondary-bg-color: #a0a8c0;
+    --secondary-text-color: #333333;
+
+
+    --number-of-columns: 8;
+    --top-bar-height: 4rem;
 }
 
-#albumCont {
+body{
+    font-family: 'Bricolage Grotesque';
+    background-color: var(--main-bg-color);
+}
+#topBar{
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(var(--number-of-columns), 1fr);
-    background-color: brown;
-}
-
-#albumCont img, #albumCont div {
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-}
-.reviewText {
-    width: 300px;
-    background: #222;
-    color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    overflow: hidden;
-    max-height: 3.5em; /* viser ca. to linjer */
-    transition: max-height 0.7s ease;
-}
-
-.reviewText.expanded {
-    max-height: 1000px; /* utvid når trykket */
+    height: var(--top-bar-height);
+    background-color: var(--blue-accent);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
 }
 
 #hamburgerDiv {
-    width: 3rem;
-    height: 3rem;
-    position: relative;
+    width: 4rem;
+    height: 4rem;
+    position: fixed;
+    right: 0.2rem;
+    top: 0rem;
+    z-index: 9999;
     cursor: pointer;
+}
+#hamburgerImg {
+    width: 100%;
+    height: auto;
 }
 
 .sideMenu{
@@ -50,6 +50,7 @@
     display: flex;
     flex-direction: column;
     grid-area: 5em;
+    z-index: 11;
 }
 
 .sideMenu.expanded{
@@ -57,24 +58,64 @@
 }
 
 #addEntry {
-    color: white;
+    color: var(--orange-accent);
     padding: 1em;
-    background-color: #555;
+    background-color: var(--blue-accent);
     text-align: center;
     cursor: pointer;
 }
 
-#addEntryOverlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
+#albumCont {
+    position: sticky;
+    top: var(--top-bar-height);
+    margin-top: var(--top-bar-height);
     width: 100%;
-    height: 100%;
-    overflow: auto;
-    transition: visibility 0s, opacity 0.1s ease;
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: repeat(var(--number-of-columns), 1fr);
 }
+
+#albumCont img, #albumCont div {
+    width: 90%;
+    height: auto;
+
+    cursor: pointer;
+}
+
+.albumCard {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 7.5%;
+
+    background-color: var(--secondary-bg-color);
+}
+
+.albumArt{
+    margin-top: 0.4rem;
+    border-radius: 0.8rem;
+    border: var(--secondary-text-color) 0.2rem solid;
+}
+
+.reviewText {
+    width: 75%;
+    background: var(--blue-accent);
+    color: var(--main-text-color);
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    overflow: hidden;
+    max-height: 3.5em; /* viser ca. to linjer */
+    transition: max-height 0.7s ease;
+}
+
+.reviewText.expanded {
+    max-height: 1000px; /* utvid når trykket */
+}
+
+
+
 /* 
 Designe først albumBox
 Lage en container for basic setup, AlbumCont er til dynamisk
