@@ -1,0 +1,91 @@
+:root{
+    --overlay-bg-color: rgba(20, 31, 69, 0.85);
+    --overlay-text-color: #2f2c27;
+    --overlay--placeholder-color: #7c776e;
+
+    --title-color: #ffffff;
+
+    --overlay-width: 75rem;
+    --overlay-height: 50rem;
+
+    --input-font-size: 2.1rem;
+}
+
+#addEntryOverlay {
+    background-color: var(--overlay-bg-color);
+    margin: 0 auto;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: var(--overlay-width);
+    height: var(--overlay-height);
+    border-radius: 1.5rem;
+    transition: visibility 0s, opacity 0.1s ease;
+
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.addEntryContent{
+    font-family: 'Bricolage Grotesque';
+    background-color: var(--main-bg-color); 
+    color: var(--overlay-text-color);
+    margin-top: 0.8rem;
+    border: 0.1rem solid #888;
+    border-radius: 0.5rem;
+
+    font-size: var(--input-font-size);
+    height: calc(var(--input-font-size) + 0.6rem);
+}
+
+.addEntryContent::placeholder{
+    color: var(--overlay-placeholder-color);
+    padding-left: 0.3rem;
+    font-style: italic;
+    text-align: center;
+}
+
+#addEntryTitle{
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    text-align: center;
+    color: var(--title-color);
+}
+
+
+#closeOverlayBtn{
+    color: var(--orange-accent);
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 2rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: Arial;
+}
+
+#preview{
+    width: 15rem;
+    height: 15rem;
+    margin: 0.5rem auto;
+    border-radius: 0.5rem;
+    visibility: hidden;
+}
+
+#albumNameInput{
+    flex: none;
+    width: calc(var(--overlay-width) / 2);
+    margin: 0.3rem;
+    box-sizing: border-box;
+}
+
+#artistNameInput{
+    width: calc(var(--overlay-width) / 2.5);
+    margin: 0.3rem;
+}
