@@ -23,6 +23,7 @@ const db = getFirestore(app); // Firestore instance
 const email = "saghaugmats@gmail.com";
 const password = "JegElskerMusikk123!";
 
+
 async function signIn() {
   const auth = getAuth();
   try {
