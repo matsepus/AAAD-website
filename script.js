@@ -27,9 +27,10 @@ async function signIn() {
   const auth = getAuth();
   try {
     console.log("Signing in...");
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);}
-    catch (error) {
-    console.error("Error signing in: ", error);
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    console.log("Logged in .-OK");
+  } catch (error) {
+    console.error("Error signing in:", error);
   }
 }
 
