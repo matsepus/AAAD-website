@@ -24,14 +24,16 @@ const email = "saghaugmats@gmail.com";
 const password = "JegElskerMusikk123!";
 
 
+let currentUserCred = null; // global
+
 async function signIn() {
   const auth = getAuth();
   try {
     console.log("Signing in...");
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    console.log("Logged in .-OK");
+    currentUserCred = await signInWithEmailAndPassword(auth, email, password);
+    console.log("Login .-OK");
   } catch (error) {
-    console.error("Error signing in:", error);
+    console.error("Error:", error);
   }
 }
 
