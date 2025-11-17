@@ -2,6 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
 import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js";
 
 // Firebase config
 const firebaseConfig = {
@@ -19,7 +20,20 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app); // Firestore instance
 
+const email = "saghaugmats@gmail.com";
+const password = "JegElskerMusikk123!";
 
+async function signIn() {
+  const auth = getAuth();
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);}
+      console.log("Signed in as:", userCredential.user.email);
+    catch (error) {
+    console.error("Error signing in: ", error);
+  }
+}
+
+signIn();
 
 const albumParent = document.getElementById('albumCont'); 
 
