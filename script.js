@@ -74,7 +74,7 @@ async function sendInput() {
   popupOverlay.style.display = "none";
   console.log("Sending input to Firestore...");
   try {
-    const docRef = await addDoc(collection(db, userCredential.email + "albumCards"), {
+    const docRef = await addDoc(collection(db, userCredential.email + " - albumCards"), {
       albumName: alnI.value,
       artistName: artnI.value,
       coverURL: coverI.value,
@@ -91,7 +91,7 @@ async function sendInput() {
 
 async function fetchAlbumCards() {
   try {
-    const querySnapshot = await getDocs(collection(db, "albumCards"));
+    const querySnapshot = await getDocs(collection(db, "saghaugmats@gmail.com - albumCards"));
     querySnapshot.forEach((doc) => {
       const data = doc.data();
       //createAlbumCard(data);
