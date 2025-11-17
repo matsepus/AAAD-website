@@ -26,6 +26,7 @@ const password = "JegElskerMusikk123!";
 async function signIn() {
   const auth = getAuth();
   try {
+    console.log("Signing in...");
     const userCredential = await signInWithEmailAndPassword(auth, email, password);}
       console.log("Signed in as:", userCredential.user.email);
     catch (error) {
