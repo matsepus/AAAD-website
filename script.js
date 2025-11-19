@@ -27,6 +27,7 @@ const password = "JegElskerMusikk123!";
 let currentUserCred = null; // global
 
 async function signIn() {
+  console.log("Preparing to sign in...");
   const auth = getAuth();
   try {
     console.log("Signing in...");
