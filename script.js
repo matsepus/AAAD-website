@@ -6,7 +6,7 @@ import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/fir
 
 // Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyDwOaA0vuBYfXdWDNF5q3PuiDtzspsEl9U",
+  //apiKey: "AIzaSyDwOaA0vuBYfXdWDNF5q3PuiDtzspsEl9U",
   authDomain: "aaad-icu.firebaseapp.com",
   projectId: "aaad-icu",
   storageBucket: "aaad-icu.firebasestorage.app",
