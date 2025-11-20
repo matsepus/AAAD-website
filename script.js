@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
 import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
 
 // Firebase config
 const firebaseConfig = {
@@ -25,10 +25,10 @@ const password = "JegElskerMusikk123!";
 
 
 let currentUserCred = null; // global
+  const auth = getAuth();
 
 async function signIn() {
   console.log("Preparing to sign in...");
-  const auth = getAuth();
   try {
     console.log("Signing in...");
     currentUserCred = await signInWithEmailAndPassword(auth, email, password);
@@ -39,6 +39,15 @@ async function signIn() {
 }
 
 signIn();
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log("User already logged in:", user.email);
+    currentUserCred = { user }; // optional
+  } else {
+    console.log("No user logged in");
+  }
+});
 
 const albumParent = document.getElementById('albumCont'); 
 
