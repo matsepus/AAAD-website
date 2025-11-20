@@ -20,8 +20,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app); // Firestore instance
 
-const email = "saghaugmats@gmail.com";
-const password = "JegElskerMusikk123!";
+
 
 
 let currentUserCred = null; // global
