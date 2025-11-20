@@ -37,7 +37,6 @@ async function signIn() {
   }
 }
 
-signIn();
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -45,8 +44,15 @@ onAuthStateChanged(auth, (user) => {
     currentUserCred = { user }; // optional
   } else {
     console.log("No user logged in");
+    requireLogin();
   }
 });
+
+function requireLogin() {
+  const email = prompt("Enter your email:");
+  const password = prompt("Enter your password:");
+  signIn();
+}
 
 const albumParent = document.getElementById('albumCont'); 
 
