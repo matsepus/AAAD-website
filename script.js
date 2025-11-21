@@ -27,7 +27,7 @@ const db = getFirestore(app); // Firestore instance
 let currentUserCred = null;
 const auth = getAuth();
 const loginPopup = document.getElementById("loginPopup");
-const authEmail = document.getElementById("authEmail");
+const authUsername = document.getElementById("authUsername");
 const authPass = document.getElementById("authPass");
 
 const loginBtn = document.getElementById("loginBtn");
@@ -45,10 +45,10 @@ function toggleLoginPopupl(displayStyle) {
 
 
 async function login() {
-  const email = authEmail.value;
+  const username = authUsername.value;
   const password = authPass.value;
   try {
-    currentUserCred = await signInWithEmailAndPassword(auth, email, password);
+    currentUserCred = await signInWithEmailAndPassword(auth, username, password);
     console.log("Login .-OK motherfucker");
     toggleLoginPopupl("none");
   } catch (e) {
@@ -57,10 +57,10 @@ async function login() {
 }
 
 async function createAccount() {
-  const email = authEmail.value;
+  const username = authUsername.value;
   const password = authPass.value;
   try {
-    currentUserCred = await createUserWithEmailAndPassword(auth, email, password);
+    currentUserCred = await createUserWithEmailAndPassword(auth, username, password);
     console.log("Account created .-OK ^^");
     toggleLoginPopupl("none");
   } catch (e) {
@@ -70,7 +70,7 @@ async function createAccount() {
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    console.log("Logged in:", user.email);
+    console.log("Logged in:", user.username);
     currentUserCred = { user };
   } else {
     toggleLoginPopupl("flex");
@@ -117,7 +117,7 @@ async function sendInput() {
   popupOverlay.style.display = "none";
   console.log("Sending input to Firestore...");
   try {
-    const docRef = await addDoc(collection(db, currentUserCred.user.email + " - albumCards"), {
+    const docRef = await addDoc(collection(db, currentUserCred.user.username + " - albumCards"), {
       albumName: alnI.value,
       artistName: artnI.value,
       coverURL: coverI.value,
