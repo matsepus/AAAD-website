@@ -26,14 +26,23 @@ const db = getFirestore(app); // Firestore instance
 
 let currentUserCred = null;
 const auth = getAuth();
+const loginPopup = document.getElementById("loginPopup");
+const authEmail = document.getElementById("authEmail");
+const authPass = document.getElementById("authPass");
 
-function showAuthModal() {
-  document.getElementById("authModal").style.display = "flex";
+const loginBtn = document.getElementById("loginBtn");
+loginBtn.addEventListener("click", async () => {
+  await login();
+});
+const createAccBtn = document.getElementById("createAccBtn");
+createAccBtn.addEventListener("click", async () => {
+  await createAccount();
+});
+
+function toggleLoginPopupl(displayStyle) {
+  loginPopup.style.display = displayStyle;
 }
 
-function closeAuthModal() {
-  document.getElementById("authModal").style.display = "none";
-}
 
 async function login() {
   const email = authEmail.value;
@@ -41,7 +50,7 @@ async function login() {
   try {
     currentUserCred = await signInWithEmailAndPassword(auth, email, password);
     console.log("Login .-OK motherfucker");
-    closeAuthModal();
+    toggleLoginPopupl("none");
   } catch (e) {
     alert("Login error: " + e.message);
   }
@@ -53,7 +62,7 @@ async function createAccount() {
   try {
     currentUserCred = await createUserWithEmailAndPassword(auth, email, password);
     console.log("Account created .-OK ^^");
-    closeAuthModal();
+    toggleLoginPopupl("none");
   } catch (e) {
     alert("Create error: " + e.message);
   }
@@ -64,7 +73,8 @@ onAuthStateChanged(auth, (user) => {
     console.log("Logged in:", user.email);
     currentUserCred = { user };
   } else {
-    showAuthModal();
+    toggleLoginPopupl("flex");
+    console.log("No user logged in");
   }
 });
 

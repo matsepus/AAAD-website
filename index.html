@@ -27,7 +27,7 @@
         <a href="suggestion/suggestion.html">Have a suggestion for an album?</a>"
     </div>
 
-        <div id="authModal" style="
+        <div id="loginPopup" style="
     position: fixed; inset:0; background: rgba(0,0,0,0.7);
     display:flex; align-items:center; justify-content:center; z-index :1000;">
     <div style="background:#222; padding:20px; border-radius:12px; width:250px; color:white;">
@@ -35,8 +35,8 @@
         <input id="authEmail" placeholder="Email" style="width:100%; margin-top:10px;">
         <input id="authPass" type="password" placeholder="Password" style="width:100%; margin-top:10px;">
     
-        <button onclick="login()" style="width:100%; margin-top:15px;">Login</button>
-        <button onclick="createAccount()" style="width:100%; margin-top:10px;">Create</button>
+        <button style="width:100%; margin-top:15px;" id="loginBtn">Login</button>
+        <button style="width:100%; margin-top:10px;" id="createAccBtn">Create</button>
     </div>
     </div>
 
