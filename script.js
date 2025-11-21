@@ -45,10 +45,10 @@ function toggleLoginPopupl(displayStyle) {
 
 
 async function login() {
-  const username = authUsername.value;
+  const email = `${authUsername.value}@prump.com`;
   const password = authPass.value;
   try {
-    currentUserCred = await signInWithEmailAndPassword(auth, username, password);
+    currentUserCred = await signInWithEmailAndPassword(auth, email, password);
     console.log("Login .-OK motherfucker");
     toggleLoginPopupl("none");
   } catch (e) {
@@ -57,10 +57,10 @@ async function login() {
 }
 
 async function createAccount() {
-  const username = authUsername.value;
+  const email = `${authUsername.value}@prump.com`;
   const password = authPass.value;
   try {
-    currentUserCred = await createUserWithEmailAndPassword(auth, username, password);
+    currentUserCred = await createUserWithEmailAndPassword(auth, email, password);
     console.log("Account created .-OK ^^");
     toggleLoginPopupl("none");
   } catch (e) {
