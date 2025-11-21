@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
 import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
 
 // Firebase config
 const firebaseConfig = {
@@ -23,36 +23,50 @@ const db = getFirestore(app); // Firestore instance
 
 
 
-let currentUserCred = null; // global
-  const auth = getAuth();
 
-async function signIn() {
-  console.log("Preparing to sign in...");
+let currentUserCred = null;
+const auth = getAuth();
+
+function showAuthModal() {
+  document.getElementById("authModal").style.display = "flex";
+}
+
+function closeAuthModal() {
+  document.getElementById("authModal").style.display = "none";
+}
+
+async function login() {
+  const email = authEmail.value;
+  const password = authPass.value;
   try {
-    console.log("Signing in...");
     currentUserCred = await signInWithEmailAndPassword(auth, email, password);
-    console.log("Login .-OK");
-  } catch (error) {
-    console.error("Error:", error);
+    console.log("Login .-OK motherfucker");
+    closeAuthModal();
+  } catch (e) {
+    alert("Login error: " + e.message);
   }
 }
 
+async function createAccount() {
+  const email = authEmail.value;
+  const password = authPass.value;
+  try {
+    currentUserCred = await createUserWithEmailAndPassword(auth, email, password);
+    console.log("Account created .-OK ^^");
+    closeAuthModal();
+  } catch (e) {
+    alert("Create error: " + e.message);
+  }
+}
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    console.log("User already logged in:", user.email);
-    currentUserCred = { user }; // optional
+    console.log("Logged in:", user.email);
+    currentUserCred = { user };
   } else {
-    console.log("No user logged in");
-    requireLogin();
+    showAuthModal();
   }
 });
-
-function requireLogin() {
-  const email = prompt("Enter your email:");
-  const password = prompt("Enter your password:");
-  signIn();
-}
 
 const albumParent = document.getElementById('albumCont'); 
 
