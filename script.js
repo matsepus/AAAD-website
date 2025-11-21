@@ -117,7 +117,7 @@ async function sendInput() {
   popupOverlay.style.display = "none";
   console.log("Sending input to Firestore...");
   try {
-    const docRef = await addDoc(collection(db, currentUserCred.user.username + " - albumCards"), {
+    const docRef = await addDoc(collection(db, currentUserCred.user.email + " - albumCards"), {
       albumName: alnI.value,
       artistName: artnI.value,
       coverURL: coverI.value,
