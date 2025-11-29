@@ -24,7 +24,7 @@ const db = getFirestore(app); // Firestore instance
 
 
 
-let currentUserCred = null;
+let window.currentUserCred = null;
 const auth = getAuth();
 const loginPopup = document.getElementById("loginPopup");
 const authUsername = document.getElementById("authUsername");
@@ -48,7 +48,7 @@ async function login() {
   const email = `${authUsername.value}@prump.com`;
   const password = authPass.value;
   try {
-    currentUserCred = await signInWithEmailAndPassword(auth, email, password);
+    window.currentUserCred = await signInWithEmailAndPassword(auth, email, password);
     console.log("Login .-OK motherfucker");
     toggleLoginPopupl("none");
   } catch (e) {
@@ -60,7 +60,7 @@ async function createAccount() {
   const email = `${authUsername.value}@prump.com`;
   const password = authPass.value;
   try {
-    currentUserCred = await createUserWithEmailAndPassword(auth, email, password);
+    window.currentUserCred = await createUserWithEmailAndPassword(auth, email, password);
     console.log("Account created .-OK ^^");
     toggleLoginPopupl("none");
   } catch (e) {
@@ -71,7 +71,7 @@ async function createAccount() {
 onAuthStateChanged(auth, (user) => {
   if (user) {
     console.log("Logged in:", user.username);
-    currentUserCred = { user };
+    window.currentUserCred = { user };
   } else {
     toggleLoginPopupl("flex");
     console.log("No user logged in");
@@ -117,7 +117,7 @@ async function sendInput() {
   popupOverlay.style.display = "none";
   console.log("Sending input to Firestore...");
   try {
-    const docRef = await addDoc(collection(db, currentUserCred.user.email + " - albumCards"), {
+    const docRef = await addDoc(collection(db, window.currentUserCred.user.email + " - albumCards"), {
       albumName: alnI.value,
       artistName: artnI.value,
       coverURL: coverI.value,

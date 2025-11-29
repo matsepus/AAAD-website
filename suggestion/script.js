@@ -40,7 +40,7 @@ async function sendSuggestion() {
             albumName: iSuggAlN.value,
             artistName: iSuggArN.value,
             albumLink: iSuggAlL.value,
-            suggestionOwner: currentUserCred.user.email,
+            suggestionOwner: window.currentUserCred.user.email,
             timestamp: new Date()
         });
         console.log("Document written with ID: ", docRef.id);
