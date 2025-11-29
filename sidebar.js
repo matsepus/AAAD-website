@@ -8,6 +8,6 @@ hamburgerDiv.addEventListener("click", () => {
 
 document.addEventListener('click', (event) => {
     if (!sideMenu.contains(event.target)) {
-        sideMenu.classList.toggle("expanded");
+        sideMenu.classList.remove("expanded");
     }
 });
