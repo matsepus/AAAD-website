@@ -24,7 +24,7 @@ const db = getFirestore(app); // Firestore instance
 
 
 
-let window.currentUserCred = null;
+window.currentUserCred = null;
 const auth = getAuth();
 const loginPopup = document.getElementById("loginPopup");
 const authUsername = document.getElementById("authUsername");
