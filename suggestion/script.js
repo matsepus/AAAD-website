@@ -88,3 +88,5 @@ function makeSuggestionCard(data) {
     cover.appendChild(artistName);
     cover.appendChild(albumLink);
 }
+
+fetchSuggestionCards();
