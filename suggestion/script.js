@@ -73,15 +73,15 @@ function makeSuggestionCard(data) {
     const card = document.createElement('div');
     card.className = 'suggestionCard';
     const albumImage = document.createElement('img');
-    albumImage.class = 'suggestionLink';
+    albumImage.className = 'suggestionLink';
     albumImage.src = data.albumLink;
     const cover = document.createElement('div');
     cover.className = 'suggestionCover';
     const albumName = document.createElement('div');
-    albumName.class = 'suggestionTitle';
+    albumName.className = 'suggestionTitle';
     albumName.textContent = data.albumName;
     const artistName = document.createElement('div');
-    artistName.class = 'suggestionArtist';
+    artistName.className = 'suggestionArtist';
     artistName.textContent = data.artistName;
 
     suggestionContainer.appendChild(card);
