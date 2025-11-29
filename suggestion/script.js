@@ -83,12 +83,16 @@ function makeSuggestionCard(data) {
     const artistName = document.createElement('div');
     artistName.className = 'suggestionArtist';
     artistName.textContent = data.artistName;
+    const suggestionOwner = document.createElement('div');
+    suggestionOwner.className = 'suggestionOwner';
+    suggestionOwner.textContent = `Suggested by: ${data.suggestionOwner}`;
 
     suggestionContainer.appendChild(card);
     card.appendChild(cover);
     card.appendChild(albumImage);
     cover.appendChild(albumName);
     cover.appendChild(artistName);
+    cover.appendChild(suggestionOwner);
 }
 
 fetchSuggestionCards();
