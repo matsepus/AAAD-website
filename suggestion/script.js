@@ -72,7 +72,7 @@ function makeSuggestionCard(data) {
     const card = document.createElement('div');
     card.className = 'suggestionCard';
     const albumImage = document.createElement('img');
-    albumImage.className = 'suggerstionArt';
+    albumImage.className = 'suggestionArt';
     albumImage.src = data.albumLink;
     const cover = document.createElement('div');
     cover.className = 'suggestionCover';
