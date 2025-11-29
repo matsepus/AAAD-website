@@ -72,6 +72,9 @@ function makeSuggestionCard(data) {
     console.log("Creating suggestion card for:", data);
     const card = document.createElement('div');
     card.className = 'suggestionCard';
+    const albumImage = document.createElement('img');
+    albumImage.class = 'suggestionLink';
+    albumImage.src = data.albumLink;
     const cover = document.createElement('div');
     cover.className = 'suggestionCover';
     const albumName = document.createElement('div');
@@ -80,15 +83,12 @@ function makeSuggestionCard(data) {
     const artistName = document.createElement('div');
     artistName.class = 'suggestionArtist';
     artistName.textContent = data.artistName;
-    const albumLink = document.createElement('a');
-    albumLink.class = 'suggestionLink';
-    albumLink.href = data.albumLink;
 
     suggestionContainer.appendChild(card);
     card.appendChild(cover);
     cover.appendChild(albumName);
     cover.appendChild(artistName);
-    cover.appendChild(albumLink);
+    cover.appendChild(albumImage);
 }
 
 fetchSuggestionCards();
