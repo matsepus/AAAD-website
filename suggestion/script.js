@@ -53,7 +53,6 @@ async function sendSuggestion() {
 }
 
 async function fetchSuggestionCards() {
-    console.log("Fetching suggestion cards...");
     try {
     const querySnapshot = await getDocs(collection(db, "suggestionCollection"));
     querySnapshot.forEach((doc) => {
@@ -73,7 +72,7 @@ function makeSuggestionCard(data) {
     const card = document.createElement('div');
     card.className = 'suggestionCard';
     const albumImage = document.createElement('img');
-    albumImage.className = 'suggestionLink';
+    albumImage.className = 'suggerstionArt';
     albumImage.src = data.albumLink;
     const cover = document.createElement('div');
     cover.className = 'suggestionCover';
