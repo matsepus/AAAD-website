@@ -3,6 +3,7 @@ const sideMenu = document.getElementById("sideMenu");
 
 
 hamburgerDiv.addEventListener("click", () => {
+  event.stopPropagation();
   sideMenu.classList.toggle("expanded");
 });
 
