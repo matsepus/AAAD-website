@@ -1,0 +1,124 @@
+@import url('../global.css');
+:root{
+    --suggestionTopBarHeight: calc(var(--top-bar-height) + 2rem);
+    --hamburgerSize: var(--suggestionTopBarHeight);
+    --suggestionNumberOfColumns: calc(var(--number-of-columns) / 2);
+}
+#topBar{
+    width: 100%;
+    height: var(--suggestionTopBarHeight);
+}
+#suggestionInputs{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: 
+    "sgAN sgAN sgAR sgAL sgSU";
+}
+#suggestionInputs input{
+    width: 80%;
+    background-color: var(--secondary-bg-color);
+    opacity: 0;
+    box-shadow: inset 0.2rem 0.2rem 0.35rem rgb(0, 0, 0);
+    border-radius: 0.5rem;
+    margin-top: 1.3rem;
+
+    height: 2.5rem;
+    font-size: 1.9rem;
+}
+#suggestionInputs input::placeholder{
+    color: var(--secondary-text-color);
+    padding-left: 0.5rem;
+    font-size: 1.8rem;
+    font-style: italic;
+}
+#topBar:hover{
+    height: calc(var(--suggestionTopBarHeight) + 4rem);
+    transition: height 0.3s ease-in;
+}
+#topBar:hover input{
+    opacity: 1;
+    transition: opacity 0.8s ease-in;
+}
+#suggestionAlbumName{
+    grid-area: sgAN;
+    
+}
+#suggestionArtistName{
+    grid-area: sgAR;
+}
+#suggestionAlbumLink{
+    grid-area: sgAL;
+}
+#submitSuggestion{
+    grid-area: sgSU;
+    background-color: var(--orange-accent);
+    color: var(--orange-accent);
+    font-weight: bold;
+    cursor: pointer;
+}
+#suggestionHeader{
+    margin-top: calc(var(--top-bar-height) / 2);
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    font-size:3.5rem;
+    font-weight: bold;
+    color: var(--orange-accent);
+}
+#hamburgerDiv {
+    width: var(--hamburgerSize);
+    height: var(--hamburgerSize);
+
+}
+#suggestionCont {
+    position: sticky;
+    top: var(--suggestionTopBarHeight);
+    margin-top: var(--suggestionTopBarHeight);
+    width: 100%;
+    display: grid;
+    justify-content: space-around;
+
+    display: grid;
+    grid-template-columns: repeat(var(--suggestionNumberOfColumns), 1fr); 
+}
+.suggestionCard{
+    position: relative;
+    margin: 1rem;
+    box-shadow: 0.5rem 0.5rem 1rem var(--blue-accent);
+    border-radius: 1rem;
+}
+.suggestionArt{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+.suggestionCover{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    color: rgb(255, 255, 255, 0);
+}
+.suggestionCover:hover{
+    background-color: rgb(20, 31, 69, 0.5);
+    color: color-mix(in srgb, var(--main-text-color) 100%, transparent);
+}
+.suggestionTitle{
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: center;
+    
+}
+.suggestionArtist{
+    font-size: 1.6rem;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+.suggestionOwner{
+    font-size: 1.4rem;
+    text-align: center;
+}

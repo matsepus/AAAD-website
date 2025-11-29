@@ -1,0 +1,1 @@
+console.log("Suggestion page script loaded.");
