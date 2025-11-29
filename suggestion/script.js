@@ -85,9 +85,9 @@ function makeSuggestionCard(data) {
 
     suggestionContainer.appendChild(card);
     card.appendChild(cover);
+    card.appendChild(albumImage);
     cover.appendChild(albumName);
     cover.appendChild(artistName);
-    cover.appendChild(albumImage);
 }
 
 fetchSuggestionCards();
