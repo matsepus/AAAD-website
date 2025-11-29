@@ -34,7 +34,7 @@
 #topBar {
     transition: height 1s ease;
 }
-}
+
 #topBar:hover{
     height: calc(var(--suggestionTopBarHeight) + 4rem);
     transition: height 0.3s ease-in;
