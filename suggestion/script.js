@@ -51,3 +51,40 @@ async function sendSuggestion() {
         console.error("Error adding document: ", e);
       }
 }
+
+async function fetchSuggestionCards() {
+    try {
+    const querySnapshot = await getDocs(collection(db, "suggestionCollection"));
+    querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        makeSuggestionCard(data);
+        });
+    }
+    catch (e) {
+        console.error("Error fetching documents: ", e);
+    }
+}
+
+const suggestionContainer = document.getElementById('suggestionCont');
+
+function makeSuggestionCard(data) {
+    const card = document.createElement('div');
+    card.className = 'suggestionCard';
+    const cover = document.createElement('div');
+    cover.className = 'suggestionCover';
+    const albumName = document.createElement('div');
+    albumName.class = 'suggestionTitle';
+    albumName.textContent = data.albumName;
+    const artistName = document.createElement('div');
+    artistName.class = 'suggestionArtist';
+    artistName.textContent = data.artistName;
+    const albumLink = document.createElement('a');
+    albumLink.class = 'suggestionLink';
+    albumLink.href = data.albumLink;
+
+    suggestionContainer.appendChild(card);
+    card.appendChild(cover);
+    cover.appendChild(albumName);
+    cover.appendChild(artistName);
+    cover.appendChild(albumLink);
+}

@@ -196,20 +196,3 @@ reviews.forEach(review => {
   });
 });
 }
-
-const hamburgerDiv = document.getElementById("hamburgerDiv");
-const sideMenu = document.getElementById("sideMenu");
-
-
-hamburgerDiv.addEventListener("click", () => {
-  sideMenu.classList.toggle("expanded");
-});
-
-const addEntry = document.getElementById("addEntry");
-const addEntryOverlay = document.getElementById("addEntryOverlay");
-
-addEntry.addEventListener("click", () => {
-  console.log("Opening popup");
-  addEntryOverlay.style.display = "flex";
-  sideMenu.classList.toggle("expanded");
-});
