@@ -28,7 +28,7 @@ const loginPopup = document.getElementById("loginPopup");
 const authUsername = document.getElementById("authUsername");
 const authPass = document.getElementById("authPass");
 
-const currentUserCred = null;
+let currentUserCred = null;
 
 const loginBtn = document.getElementById("loginBtn");
 loginBtn.addEventListener("click", async () => {
