@@ -72,7 +72,7 @@ async function createAccount() {
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    console.log("Logged in:", user.username);
+    console.log("Logged in:", user.email);
     currentUserCred = { user };
     toggleLoginPopup("none");
   } else {
