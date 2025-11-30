@@ -89,8 +89,8 @@ function makeSuggestionCard(data) {
     artistName.textContent = data.artistName;
     const suggestionOwner = document.createElement('div');
     suggestionOwner.className = 'suggestionOwner';
-    let value = data.suggestionOwner;
-    value = value.replace(/@.prump.com/, '');
+    let suffix = "@prump.com"
+    let value = data.suggestionOwner.replace(suffix, "");
     suggestionOwner.textContent = `Suggested by: ${value}`;
 
     suggestionContainer.appendChild(card);
