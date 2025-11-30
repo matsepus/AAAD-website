@@ -28,6 +28,8 @@ const loginPopup = document.getElementById("loginPopup");
 const authUsername = document.getElementById("authUsername");
 const authPass = document.getElementById("authPass");
 
+const currentUserCred = null;
+
 const loginBtn = document.getElementById("loginBtn");
 loginBtn.addEventListener("click", async () => {
   await login();
@@ -46,7 +48,7 @@ async function login() {
   const email = `${authUsername.value}@prump.com`;
   const password = authPass.value;
   try {
-    const currentUserCred = await signInWithEmailAndPassword(auth, email, password);
+    currentUserCred = await signInWithEmailAndPassword(auth, email, password);
 
     console.log("Login .-OK motherfucker");
     toggleLoginPopup("none");
@@ -59,7 +61,7 @@ async function createAccount() {
   const email = `${authUsername.value}@prump.com`;
   const password = authPass.value;
   try {
-    const currentUserCred = await createUserWithEmailAndPassword(auth, email, password);
+    currentUserCred = await createUserWithEmailAndPassword(auth, email, password);
 
     console.log("Account created .-OK ^^");
     toggleLoginPopup("none");
@@ -71,7 +73,7 @@ async function createAccount() {
 onAuthStateChanged(auth, (user) => {
   if (user) {
     console.log("Logged in:", user.username);
-    const currentUserCred = { user };
+    currentUserCred = { user };
     toggleLoginPopup("none");
   } else {
     toggleLoginPopup("flex");
