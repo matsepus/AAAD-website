@@ -24,6 +24,7 @@ const db = getFirestore(app); // Firestore instance
 
 
 const auth = getAuth();
+const backCover = document.getElementById("backCover");
 const loginPopup = document.getElementById("loginPopup");
 const authUsername = document.getElementById("authUsername");
 const authPass = document.getElementById("authPass");
@@ -41,6 +42,7 @@ createAccBtn.addEventListener("click", async () => {
 
 function toggleLoginPopup(displayStyle) {
   loginPopup.style.display = displayStyle;
+  backCover.style.display = displayStyle;
 }
 
 
