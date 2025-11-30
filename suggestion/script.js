@@ -28,7 +28,7 @@ onAuthStateChanged(auth, (user) => {
         currentUserCred = { user };
         console.log("Logged in:", user.email, "motherfucker ^_^");
     } else {
-        console.log("No user logged in");
+        window.open("aaad.icu", "_self")
     }
 });
 
