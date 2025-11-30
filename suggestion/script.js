@@ -28,7 +28,7 @@ onAuthStateChanged(auth, (user) => {
         currentUserCred = { user };
         console.log("Logged in:", user.email, "motherfucker ^_^");
     } else {
-        window.open("https://www.aaad.icu", "_self")
+        location.href ="../index.html"
     }
 });
 
