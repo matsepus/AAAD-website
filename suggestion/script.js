@@ -90,7 +90,7 @@ function makeSuggestionCard(data) {
     const suggestionOwner = document.createElement('div');
     suggestionOwner.className = 'suggestionOwner';
     let value = data.suggestionOwner;
-    value = value.replace(/@.*/, '');
+    //value = value.replace(/@.*/, '');
     suggestionOwner.textContent = `Suggested by: ${value}`;
 
     suggestionContainer.appendChild(card);
