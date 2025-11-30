@@ -90,7 +90,8 @@ function makeSuggestionCard(data) {
     const suggestionOwner = document.createElement('div');
     suggestionOwner.className = 'suggestionOwner';
     let suffix = "@prump.com"
-    let value = data.suggestionOwner.replace(suffix, "");
+    let value = data.suggestionOwner;
+    value = value.endsWith(suffix) ? value.slice(0, -suffix.length) : value;
     suggestionOwner.textContent = `Suggested by: ${value}`;
 
     suggestionContainer.appendChild(card);
