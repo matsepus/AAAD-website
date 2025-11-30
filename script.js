@@ -4,6 +4,8 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase
 import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
 
+import { setCurrentUserCred } from "../loginShared.js";
+
 // Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyDwOaA0vuBYfXdWDNF5q3PuiDtzspsEl9U",
@@ -23,8 +25,6 @@ const db = getFirestore(app); // Firestore instance
 
 
 
-
-window.currentUserCred = null;
 const auth = getAuth();
 const loginPopup = document.getElementById("loginPopup");
 const authUsername = document.getElementById("authUsername");
@@ -39,7 +39,7 @@ createAccBtn.addEventListener("click", async () => {
   await createAccount();
 });
 
-function toggleLoginPopupl(displayStyle) {
+function toggleLoginPopup(displayStyle) {
   loginPopup.style.display = displayStyle;
 }
 
@@ -48,9 +48,11 @@ async function login() {
   const email = `${authUsername.value}@prump.com`;
   const password = authPass.value;
   try {
-    window.currentUserCred = await signInWithEmailAndPassword(auth, email, password);
+    const currentUserCred = await signInWithEmailAndPassword(auth, email, password);
+    setCurrentUserCred(currentUserCred);
+
     console.log("Login .-OK motherfucker");
-    toggleLoginPopupl("none");
+    toggleLoginPopup("none");
   } catch (e) {
     alert("Login error: " + e.message);
   }
@@ -60,9 +62,11 @@ async function createAccount() {
   const email = `${authUsername.value}@prump.com`;
   const password = authPass.value;
   try {
-    window.currentUserCred = await createUserWithEmailAndPassword(auth, email, password);
+    const currentUserCred = await createUserWithEmailAndPassword(auth, email, password);
+    setCurrentUserCred(currentUserCred);
+
     console.log("Account created .-OK ^^");
-    toggleLoginPopupl("none");
+    toggleLoginPopup("none");
   } catch (e) {
     alert("Create error: " + e.message);
   }
@@ -71,9 +75,11 @@ async function createAccount() {
 onAuthStateChanged(auth, (user) => {
   if (user) {
     console.log("Logged in:", user.username);
-    window.currentUserCred = { user };
+    const currentUserCred = { user };
+    setCurrentUserCred(currentUserCred);
+    toggleLoginPopup("none");
   } else {
-    toggleLoginPopupl("flex");
+    toggleLoginPopup("flex");
     console.log("No user logged in");
   }
 });
@@ -117,7 +123,7 @@ async function sendInput() {
   popupOverlay.style.display = "none";
   console.log("Sending input to Firestore...");
   try {
-    const docRef = await addDoc(collection(db, window.currentUserCred.user.email + " - albumCards"), {
+    const docRef = await addDoc(collection(db, currentUserCred.user.email + " - albumCards"), {
       albumName: alnI.value,
       artistName: artnI.value,
       coverURL: coverI.value,

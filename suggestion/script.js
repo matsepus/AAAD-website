@@ -4,6 +4,8 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase
 import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
 
+import { setCurrentUserCred } from "../loginShared.js";
+
 // Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyDwOaA0vuBYfXdWDNF5q3PuiDtzspsEl9U",
@@ -40,7 +42,7 @@ async function sendSuggestion() {
             albumName: iSuggAlN.value,
             artistName: iSuggArN.value,
             albumLink: iSuggAlL.value,
-            suggestionOwner: window.currentUserCred.user.email,
+            suggestionOwner: currentUserCred.user.email,
             timestamp: new Date()
         });
         console.log("Document written with ID: ", docRef.id);
