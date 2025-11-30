@@ -33,26 +33,18 @@ if (inbtn) {
 }
 
 async function sendSuggestion() {
-    const iSuggAlN = document.getElementById('iSuggAlN');
-    const iSuggArN = document.getElementById('iSuggArN');
-    const iSuggAlL = document.getElementById('iSuggAlL');
+    if (!currentUserCred) {
+        alert("Not logged in motherfucker ^w^");
+        return;
+    }
 
-    try {
-        const docRef = await addDoc(collection(db, "suggestionCollection"), {
-            albumName: iSuggAlN.value,
-            artistName: iSuggArN.value,
-            albumLink: iSuggAlL.value,
-            suggestionOwner: currentUserCred.email,
-            timestamp: new Date()
-        });
-        console.log("Document written with ID: ", docRef.id);
-        iSuggAlL.value = '';
-        iSuggArN.value = '';
-        iSuggAlN.value = '';
-      }
-      catch (e) {
-        console.error("Error adding document: ", e);
-      }
+    await addDoc(collection(db, "suggestionCollection"), {
+        albumName: iSuggAlN.value,
+        artistName: iSuggArN.value,
+        albumLink: iSuggAlL.value,
+        suggestionOwner: currentUserCred.user.email,
+        timestamp: new Date()
+    });
 }
 
 async function fetchSuggestionCards() {
