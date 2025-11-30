@@ -28,7 +28,7 @@ onAuthStateChanged(auth, (user) => {
         currentUserCred = { user };
         console.log("Logged in:", user.email, "motherfucker ^_^");
     } else {
-        location.href ="../index.html"
+        window.location.replace("../index.html")
     }
 });
 
