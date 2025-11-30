@@ -4,8 +4,6 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase
 import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
 
-import { currentUserCred } from "../loginShared.js";
-
 // Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyDwOaA0vuBYfXdWDNF5q3PuiDtzspsEl9U",
@@ -21,6 +19,18 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app); // Firestore instance
+const auth = getAuth();
+
+let currentUserCred = null;
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        currentUserCred = { user };
+        console.log("Logged in:", user.email, "motherfucker ^_^");
+    } else {
+        console.log("No user logged in");
+    }
+});
 
 const inbtn = document.getElementById('submitSuggestion');
 if (inbtn) {

@@ -4,8 +4,6 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase
 import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
 
-import { setCurrentUserCred } from "../loginShared.js";
-
 // Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyDwOaA0vuBYfXdWDNF5q3PuiDtzspsEl9U",
@@ -49,7 +47,6 @@ async function login() {
   const password = authPass.value;
   try {
     const currentUserCred = await signInWithEmailAndPassword(auth, email, password);
-    setCurrentUserCred(currentUserCred);
 
     console.log("Login .-OK motherfucker");
     toggleLoginPopup("none");
@@ -63,7 +60,6 @@ async function createAccount() {
   const password = authPass.value;
   try {
     const currentUserCred = await createUserWithEmailAndPassword(auth, email, password);
-    setCurrentUserCred(currentUserCred);
 
     console.log("Account created .-OK ^^");
     toggleLoginPopup("none");
@@ -76,7 +72,6 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     console.log("Logged in:", user.username);
     const currentUserCred = { user };
-    setCurrentUserCred(currentUserCred);
     toggleLoginPopup("none");
   } else {
     toggleLoginPopup("flex");
