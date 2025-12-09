@@ -118,12 +118,19 @@ if (inbtn) {
 
 const addEntryOverlay = document.getElementById("addEntryOverlay");
 const addEntry = document.getElementById("addEntry");
+const closeAddEntry = document.getElementById("closeAddEntry");
 
 addEntry.addEventListener("click", () => {
   console.log("Opening popup");
   addEntryOverlay.style.display = "flex";
   sideMenu.classList.toggle("expanded");
 });
+closeAddEntry.addEventListener("click", () => {
+  console.log("Opening popup");
+  addEntryOverlay.style.display = "none";
+  sideMenu.classList.toggle("expanded");
+});
+
 
 async function sendInput() {
   addEntryOverlay.style.display = "none";
