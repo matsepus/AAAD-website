@@ -116,10 +116,17 @@ if (inbtn) {
   console.error("Button not found!");
 }
 
-const popupOverlay = document.getElementById("addEntryOverlay");
+const addEntryOverlay = document.getElementById("addEntryOverlay");
+const addEntry = document.getElementById("addEntry");
+
+addEntry.addEventListener("click", () => {
+  console.log("Opening popup");
+  addEntryOverlay.style.display = "flex";
+  sideMenu.classList.toggle("expanded");
+});
 
 async function sendInput() {
-  popupOverlay.style.display = "none";
+  addEntryOverlay.style.display = "none";
   console.log("Sending input to Firestore...");
   try {
     const docRef = await addDoc(collection(db, currentUserCred.user.email + " - albumCards"), {
