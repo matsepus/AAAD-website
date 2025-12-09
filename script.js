@@ -118,7 +118,7 @@ if (inbtn) {
 
 const addEntryOverlay = document.getElementById("addEntryOverlay");
 const addEntry = document.getElementById("addEntry");
-const closeAddEntry = document.getElementById("closeAddEntry");
+const closeAddEntry = document.getElementById("closeAddEntryBtn");
 
 addEntry.addEventListener("click", () => {
   console.log("Opening popup");
