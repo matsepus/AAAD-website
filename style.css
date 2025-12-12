@@ -1,3 +1,19 @@
+:root{
+    --popup-width: 30rem;
+    --popup-height: 23rem;
+
+    --title-font-size: 2.5rem;
+    --input-font-size: 1.5rem;
+}
+@media (max-width: 80rem) {
+:root{
+    --popup-width: 70%;
+    --popup-height: 40%;
+
+    --title-font-size: 2.2rem;
+    --input-font-size: 1.2rem;
+}
+}
 #backCover{
     position: fixed;
     top: 0;
@@ -8,6 +24,8 @@
     z-index: 1000;
 }
 #loginPopup{
+    width: var(--popup-width);
+    height: var(--popup-height);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,7 +42,7 @@
     z-index: 1001;
 }
 #login_Create{
-    font-size: 2.5rem;
+    font-size: var(--title-font-size);
     font-weight: bold;
     margin-bottom: 3rem;
 }

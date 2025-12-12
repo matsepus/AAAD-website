@@ -7,8 +7,22 @@
 
     --overlay-width: 75rem;
     --overlay-height: 50rem;
+    --preview-size: 15rem;
 
     --input-font-size: 2.1rem;
+    --addEntryTitle-font-size: 3.5rem;
+
+}
+@media (max-width: 100rem) {
+:root{
+    --overlay-width: 75%;
+    --overlay-height: auto;
+
+    --preview-size: 7rem;
+
+    --input-font-size: 1.5rem;
+    --addEntryTitle-font-size: 1.5rem;
+}
 }
 
 #addEntryOverlay {
@@ -50,7 +64,7 @@
 }
 
 #addEntryTitle{
-    font-size: 3.5rem;
+    font-size: var(--addEntryTitle-font-size);
     font-weight: bold;
     margin-top: 0.5rem;
     text-align: center;
@@ -71,8 +85,8 @@
 }
 
 #preview{
-    width: 15rem;
-    height: 15rem;
+    width: var(--preview-size);
+    height: var(--preview-size);
     margin: 0.5rem auto;
     border-radius: 0.5rem;
     visibility: hidden;
@@ -88,4 +102,15 @@
 #artistNameInput{
     width: calc(var(--overlay-width) / 2.5);
     margin: 0.3rem;
+}
+
+#inputBtn{
+    margin-bottom: 1rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.5rem;
+    background-color: var(--dark-blue-accent);
+    color: var(--main-text-color);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
 }

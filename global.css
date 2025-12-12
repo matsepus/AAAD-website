@@ -11,12 +11,20 @@
     --top-bar-height: 4rem;
     --albumArt-size: 78%;
 
+    --sidemenu-width: 25rem;
+
     --test-color: #ff00ff;
+
+    --moss-green: #3A6F52;
+    --pastel-green: #6E9F7A;
+    --rich-green: #2E5530;
+;
 }
 
-@media (max-width: 100rem) {
+@media (max-width: 80rem) {
 :root {
     --number-of-columns: 3;
+    --sidemenu-width: 15rem;
 }
 }
 
@@ -52,7 +60,7 @@ body{
     position: fixed;
     top: 0;
     right: -100em;
-    width: 25em;
+    width: var(--sidemenu-width);
     height: 100%;
     background-color: #333;
     transition: right 0.3s ease;
