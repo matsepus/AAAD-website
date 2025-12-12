@@ -67,7 +67,6 @@ body{
     display: grid;
     justify-content: space-around;
     grid-template-columns: repeat(var(--number-of-columns), 1fr);
-    align-items: start;
 }
 
 #albumCont img, #albumCont div {
@@ -76,7 +75,6 @@ body{
 
 .albumCard {
     width: 90%;
-    max-width: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,7 +87,6 @@ body{
     height: var(--albumArt-size);
     width: var(--albumArt-size);
     margin-top: 0.4rem;
-    object-fit: cover;   /* important */
     border-radius: 0.8rem;
     border: var(--secondary-text-color) 0.2rem solid;
 }
@@ -108,5 +105,7 @@ body{
 
 .reviewText.expanded {
     max-height: 300rem; /* utvid når trykket */
+    word-break: break-word;   /* <-- IMPORTANT */
+    overflow-wrap: break-word; /* backup */
 }
 }
