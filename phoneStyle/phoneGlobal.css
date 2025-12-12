@@ -65,7 +65,7 @@ body{
     margin-top: var(--top-bar-height);
     width: 100%;
     display: grid;
-    justify-content: space-around;
+    justify-content: stretch;
     grid-template-columns: repeat(var(--number-of-columns), 1fr);
 }
 
@@ -81,12 +81,11 @@ body{
     margin-top: 7.5%;
 
     background-color: var(--secondary-bg-color);
-    height: var(--albumArt-size);
-    width: var(--albumArt-size);
 }
 
 .albumArt{
-
+    height: var(--albumArt-size);
+    width: var(--albumArt-size);
     margin-top: 0.4rem;
     border-radius: 0.8rem;
     border: var(--secondary-text-color) 0.2rem solid;
@@ -105,6 +104,6 @@ body{
 }
 
 .reviewText.expanded {
-    max-height: 1000px; /* utvid når trykket */
+    max-height: 300rem; /* utvid når trykket */
 }
 }
