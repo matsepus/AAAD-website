@@ -65,8 +65,9 @@ body{
     margin-top: var(--top-bar-height);
     width: 100%;
     display: grid;
-    justify-content: stretch;
+    justify-content: space-around;
     grid-template-columns: repeat(var(--number-of-columns), 1fr);
+    align-items: start;
 }
 
 #albumCont img, #albumCont div {
@@ -87,6 +88,7 @@ body{
     height: var(--albumArt-size);
     width: var(--albumArt-size);
     margin-top: 0.4rem;
+    object-fit: cover;   /* important */
     border-radius: 0.8rem;
     border: var(--secondary-text-color) 0.2rem solid;
 }
