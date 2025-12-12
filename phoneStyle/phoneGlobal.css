@@ -1,4 +1,4 @@
-@media (max-width: 600px) {
+@media (max-width: 48rem) {
 :root {
     --number-of-columns: 3;
     --top-bar-height: 4rem;
