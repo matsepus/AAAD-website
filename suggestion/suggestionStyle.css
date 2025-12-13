@@ -8,7 +8,7 @@
 }
 @media (max-width: 80rem) {
 :root{
-    --suggestionNumberOfColumns: 3;
+    --suggestionNumberOfColumns: 2;
     --header-font-size: 1.2rem;
 }
 }
