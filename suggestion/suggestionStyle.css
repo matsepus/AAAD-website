@@ -3,6 +3,14 @@
     --suggestionTopBarHeight: calc(var(--top-bar-height) + 2rem);
     --hamburgerSize: var(--suggestionTopBarHeight);
     --suggestionNumberOfColumns: calc(var(--number-of-columns) / 2);
+
+    --header-font-size: 3.5rem;
+}
+@media (max-width: 80rem) {
+:root{
+    --suggestionNumberOfColumns: 3;
+    --header-font-size: 1.2rem;
+}
 }
 #topBar{
     width: 100%;
@@ -66,7 +74,7 @@
     height: 2rem;
     line-height: 2rem;
     text-align: center;
-    font-size:3.5rem;
+    font-size: var(--header-font-size);
     font-weight: bold;
     color: var(--orange-accent);
 }
