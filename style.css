@@ -5,6 +5,7 @@
 
     --title-font-size: 2.5rem;
     --input-font-size: 1.5rem;
+    --please-font-size: 1.2rem;
 }
 @media (max-width: 80rem) {
 :root{
@@ -13,6 +14,7 @@
 
     --title-font-size: 1.5rem;
     --input-font-size: 1.2rem;
+    --please-font-size: 0.8rem;
 }
 }
 #backCover{
@@ -90,7 +92,7 @@
 }
 #loginPlease{
     margin-top: 1.5rem;
-    font-size: 1.2rem;
+    font-size: var(--please-font-size );
     text-align: center;
     font-style: italic;
 }
