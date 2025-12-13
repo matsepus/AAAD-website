@@ -12,7 +12,7 @@
 @media (max-width: 80rem) {
 :root{
     --popup-width: 70%;
-    --popup-height: 80%;
+    --popup-height: 60%;
 
     --create-bottom-margin: 1.5rem;
 
