@@ -1,6 +1,7 @@
 :root{
     --popup-width: 30rem;
     --popup-height: 23rem;
+    --input-width: 80%;
 
     --title-font-size: 2.5rem;
     --input-font-size: 1.5rem;
@@ -10,7 +11,7 @@
     --popup-width: 70%;
     --popup-height: 40%;
 
-    --title-font-size: 2.2rem;
+    --title-font-size: 1.5rem;
     --input-font-size: 1.2rem;
 }
 }
@@ -47,11 +48,12 @@
     margin-bottom: 3rem;
 }
 #authUsername, #authPass{
-    width: 20rem;
+    width: var(--input-width);
     padding: 0.8rem;
     margin-bottom: 0.6rem;
     border-radius: 0.3rem;
     background-color: var(--main-bg-color);
+    font-style: normal;
 }
 #authUsername, #authPass::placeholder{
     font-style: italic;
