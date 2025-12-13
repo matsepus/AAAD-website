@@ -9,7 +9,7 @@
 @media (max-width: 80rem) {
 :root{
     --popup-width: 70%;
-    --popup-height: 60%;
+    --popup-height: 80%;
 
     --title-font-size: 1.5rem;
     --input-font-size: 1.2rem;
