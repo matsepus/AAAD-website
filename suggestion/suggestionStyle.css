@@ -1,20 +1,18 @@
 @import url('../global.css');
 :root{
     --suggestionTopBarHeight: calc(var(--top-bar-height) + 2rem);
+    --suggestionTopBarHoverHeight: calc(var(--suggestionTopBarHeight) + 4rem);
     --hamburgerSize: var(--suggestionTopBarHeight);
     --suggestionNumberOfColumns: calc(var(--number-of-columns) / 2);
 
+    --header-bottom-margin: 0rem;
+    --header-top-margin: calc(var(--top-bar-height) / 2);
+
     --header-font-size: 3.5rem;
+
 }
-@media (max-width: 80rem) {
-:root{
-    --suggestionNumberOfColumns: 2;
-    --header-font-size: 1.2rem;
-}
-}
-#topBar{
-    width: 100%;
-    height: var(--suggestionTopBarHeight);
+#mobileOnlyHeader{
+    display: none;
 }
 #suggestionInputs{
     display: grid;
@@ -22,11 +20,14 @@
     grid-template-areas: 
     "sgAN sgAN sgAR sgAL sgSU";
 }
+#topBar{
+    width: 100%;
+    height: var(--suggestionTopBarHeight);
+}
 #suggestionInputs input{
     width: 80%;
     background-color: var(--secondary-bg-color);
     opacity: 0;
-    transition: opacity 1s ease;
     box-shadow: inset 0.2rem 0.2rem 0.35rem rgb(0, 0, 0);
     border-radius: 0.5rem;
     margin-top: 1.3rem;
@@ -40,26 +41,22 @@
     font-size: 1.8rem;
     font-style: italic;
 }
-#topBar {
-    transition: height 1s ease;
-}
-
 #topBar:hover{
-    height: calc(var(--suggestionTopBarHeight) + 4rem);
+    height: var(--suggestionTopBarHoverHeight);
     transition: height 0.3s ease-in;
 }
 #topBar:hover input{
     opacity: 1;
     transition: opacity 0.8s ease-in;
 }
-#iSuggAlN{
+#suggestionAlbumName{
     grid-area: sgAN;
     
 }
-#iSuggArN{
+#suggestionArtistName{
     grid-area: sgAR;
 }
-#iSuggAlL{
+#suggestionAlbumLink{
     grid-area: sgAL;
 }
 #submitSuggestion{
@@ -70,7 +67,8 @@
     cursor: pointer;
 }
 #suggestionHeader{
-    margin-top: calc(var(--top-bar-height) / 2);
+    margin-top: var(--header-top-margin);
+    margin-bottom: var(--header-bottom-margin);
     height: 2rem;
     line-height: 2rem;
     text-align: center;
@@ -114,7 +112,6 @@
     display: grid;
     place-items: center;
     color: rgb(255, 255, 255, 0);
-    border-radius: 1rem;
 }
 .suggestionCover:hover{
     background-color: rgb(20, 31, 69, 0.5);
@@ -135,4 +132,26 @@
 .suggestionOwner{
     font-size: 1.4rem;
     text-align: center;
+}
+
+@media (max-width: 80rem) {
+:root{
+    --suggestionTopBarHoverHeight: calc(var(--suggestionTopBarHeight) + 17rem);
+    --suggestionNumberOfColumns: 2;
+    --header-font-size: 1.2rem;
+
+    --header-bottom-margin: 1rem;
+    --header-top-margin: 1rem;
+}
+#mobileOnlyHeader{
+    display: inline;
+}
+#suggestionInputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#suggestionAlbumName{
+    margin-top: 1rem;
+}
 }
