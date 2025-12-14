@@ -13,17 +13,6 @@
     --addEntryTitle-font-size: 3.5rem;
 
 }
-@media (max-width: 100rem) {
-:root{
-    --overlay-width: 75%;
-    --overlay-height: auto;
-
-    --preview-size: 7rem;
-
-    --input-font-size: 1.5rem;
-    --addEntryTitle-font-size: 1.5rem;
-}
-}
 
 #addEntryOverlay {
     background-color: var(--overlay-bg-color);
@@ -72,16 +61,17 @@
 }
 
 
-#closeOverlayBtn{
+#closeAddEntry{
     color: var(--orange-accent);
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    font-size: 2rem;
+    top: 1rem;
+    right: 1rem;
+    font-size: var(--closeAddEntry-font-size);
     background-color: transparent;
     border: none;
     cursor: pointer;
     font-family: Arial;
+    box-shadow: inset 0,2rem 0,2rem 0 0 var(--blue-accent);
 }
 
 #preview{
@@ -113,4 +103,19 @@
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
+}
+@media (max-width: 100rem) {
+:root{
+    --overlay-width: 75%;
+    --overlay-height: auto;
+
+    --preview-size: 7rem;
+
+    --input-font-size: 1.5rem;
+    --addEntryTitle-font-size: 1.5rem;
+    --closeAddEntry-font-size: 2rem;
+}
+#mobileOnlyAddEntryHeader{
+    display: inline;
+}
 }
