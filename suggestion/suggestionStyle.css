@@ -66,8 +66,7 @@
 }
 #submitSuggestion{
     grid-area: sgSU;
-    background-color: var(--orange-accent);
-    color: var(--orange-accent);
+    color: var(--main-text-color);
     font-weight: bold;
     cursor: pointer;
 }
