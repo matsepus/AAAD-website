@@ -61,7 +61,7 @@
 }
 
 
-#closeAddEntry{
+#closeAddEntryBtn{
     color: var(--orange-accent);
     position: absolute;
     top: 1rem;
