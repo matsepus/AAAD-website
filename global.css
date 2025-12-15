@@ -41,7 +41,19 @@ body{
     left: 0;
     z-index: 10;
 }
-
+#logoDiv{
+    width: var(--logo-size);
+    height: var(--logo-size);
+    position: fixed;
+    left: var(--log-left-top);
+    top: var(--log-left-top);
+    z-index: 9999;
+    cursor: pointer;
+}
+#logoLink img{
+    width: 100%;
+    height: auto;
+}
 #hamburgerDiv {
     width: 4rem;
     height: 4rem;
