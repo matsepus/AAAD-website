@@ -9,6 +9,8 @@
 
     --number-of-columns: 8;
     --top-bar-height: 4rem;
+    --log-left-top: 0.5rem;
+    --logo-size: calc(var(--top-bar-height) - var(--log-left-top) * 2);
     --albumArt-size: 78%;
 
     --sidemenu-width: 25rem;
