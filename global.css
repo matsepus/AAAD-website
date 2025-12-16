@@ -100,8 +100,8 @@ body{
 }
 #suggestionLink{
     color: var(--main-text-color);
-    padding: 1em;
-    background: linear-gradient(top left to right bottom, var(--blue-accent), var(--dark-blue-accent), var(--blue-accent));
+    padding: 1.6em;
+    background: linear-gradient(to bottom left, var(--dark-blue-accent), var(--blue-accent), var(--dark-blue-accent));
 
     text-align: center;
     text-decoration: none;
