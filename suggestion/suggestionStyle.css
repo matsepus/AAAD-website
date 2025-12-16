@@ -17,9 +17,6 @@
 #topBar{
     width: 100%;
     height: var(--suggestionTopBarHeight);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
 }
 #suggestionInputs{
     background-color: var(--blue-accent);
