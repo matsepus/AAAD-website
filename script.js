@@ -152,6 +152,10 @@ async function sendInput() {
 }
 
 async function fetchAlbumCards() {
+  if (!currentUserCred || !currentUserCred.user) {
+    console.log("User not ready yet");
+    return;
+  }
       console.log(currentUserCred.user.email);
   try {
     const querySnapshot = await getDocs(collection(db, currentUserCred.user.email + " - albumCards"));
