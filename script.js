@@ -77,6 +77,7 @@ onAuthStateChanged(auth, (user) => {
     console.log("Logged in:", user.email);
     currentUserCred = { user };
     toggleLoginPopup("none");
+    fetchAlbumCards();
   } else {
     toggleLoginPopup("flex");
     console.log("No user logged in");
@@ -199,8 +200,6 @@ function makeAlbumCards(data) {
   location.reload
   addExpandReview();
 }
-
-fetchAlbumCards();
 
 
 function addExpandReview() {
