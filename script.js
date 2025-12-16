@@ -153,6 +153,7 @@ async function sendInput() {
 
 async function fetchAlbumCards() {
   try {
+    console.log(currentUserCred.user.email);
     const querySnapshot = await getDocs(collection(db, currentUserCred.user.email + " - albumCards"));
     querySnapshot.forEach((doc) => {
       const data = doc.data();
