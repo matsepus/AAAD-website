@@ -35,6 +35,13 @@ const loginBtn = document.getElementById("loginBtn");
 loginBtn.addEventListener("click", async () => {
   await login();
 });
+
+authPass.addEventListener("keydown",  async (e) => {
+  if (e.key === "Enter"){
+  await login();
+  }
+});
+
 const createAccBtn = document.getElementById("createAccBtn");
 createAccBtn.addEventListener("click", async () => {
   await createAccount();
