@@ -87,15 +87,43 @@ body{
 .sideMenu.expanded{
     right: 0;
 }
-
 #addEntry {
     color: var(--orange-accent);
-    padding: 1em;
-    background-color: var(--blue-accent);
+    padding: 2em;
+    background: linear-gradient(to right bottom, var(--dark-blue-accent), var(--blue-accent), var(--dark-blue-accent));
+
     text-align: center;
     cursor: pointer;
 }
+#addEntry:hover {
+    background: var(--dark-blue-accent);
+}
+#suggestionLink{
+    color: var(--main-text-color);
+    padding: 1em;
+    background: linear-gradient(top left to right bottom, var(--blue-accent), var(--dark-blue-accent), var(--blue-accent));
 
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-style: italic;
+}
+#suggestionLink:hover {
+    background: var(--dark-blue-accent);
+}
+#aboutLink{
+    color: var(--secondary-text-color);
+    font-size: 1,5rem;
+    padding: 2rem;
+    margin-top: auto;
+    background: linear-gradient(to right bottom, var(--orange-accent), var(--dark-orange-accent));
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+#aboutLink:hover {
+    background: var(--dark-orange-accent);
+}
 #albumCont {
     position: sticky;
     top: var(--top-bar-height);
