@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project_2026 - BeatLogr.com</title>
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../inputStyle.css">
+
+    <link rel="icon" type="image/x-icon" href="../images/favicon2.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="backCover"></div>
+    <div id="loginPopup">
+        <div id="login_Create">Login / Create User</div>
+        <input id="authUsername" placeholder="Username (not email)">
+        <input id="authPass" type="password" placeholder="Password">
+    
+        <button id="loginBtn">LOGIN</button>
+        <button id="createAccBtn">CREATE USER</button>
+        <div id="loginPlease">Please remember to use a password that is unique to this website :)</div>
+    </div>
+
+    <div id="topBar">
+        <div id="logoDiv">
+            <a href="../index.html" id="logoLink">
+                <img src="images/favicon2.ico" alt="">
+            </a>
+        </div>
+            <div id="hamburgerDiv">
+        <img src="images/hamburger3.png" alt="Menu" id="hamburgerImg">
+            </div>
+    </div>
+
+    <div class="sideMenu" id="sideMenu">
+        <div id="addEntry">Add a new Entry!</div>
+        <a id="suggestionLink" href="../suggestion/suggestion.html">Have a suggestion for an album?</a>
+        <a id="aboutLink" href="../about/about.html">About this Project</a>
+    </div>
+
+    <div id="addEntryOverlay">
+        <div id="addEntryTitle">
+            Add a new Album
+            <span id="mobileOnlyAddEntryHeader"><br></span> 
+             Review here!
+        </div>
+        <img id="preview">
+        <input type="button" value="X" id="closeAddEntryBtn">
+        <input type="text" placeholder="Write the Album name here!" class="addEntryContent" id="albumNameInput">
+        <input type="text" placeholder="Artist name goes here!" class="addEntryContent" id="artistNameInput">
+        <select class="addEntryContent" id="genreDropdown">
+            <option value="" disabled selected>Select Genre</option>
+            <option value="Pop">Pop</option>
+            <option value="Rock">Rock</option>
+            <option value="Hip-Hop">Hip-Hop</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Classical">Classical</option>
+            <option value="Electronic">Electronic</option>
+            <option value="Country">Country</option>
+            <option value="Reggae">Reggae</option>
+            <option value="Metal">Metal</option>
+            <option value="Folk">Folk</option>
+            <option value="R&B">R&B</option>
+            <option value="Indie">Indie</option>
+        </select>
+        <input type="text" value="https://upload.wikimedia.org/wikipedia/en/f/f8/The_Strokes_-_The_New_Abnormal.png" class="addEntryContent" id="coverURLInput">
+        <input type="text" value="https://www.w3schools.com/css/css3_variables.asp" class="addEntryContent" id="linkInput">
+        <textarea placeholder="TestReview" oninput="autoSize(this)" class="addEntryContent" id="reviewInput"></textarea>
+        <input type="button" value="Send Input" class="addEntryContent" id="inputBtn">
+    </div>
+
+
+    <div id="albumCont">
+
+    </div>
+    <script type="module" src="../script.js"></script>
+    <script src="../sidebar.js"></script>
+
+
+</body>
+
+</html>
