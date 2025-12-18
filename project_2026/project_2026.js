@@ -164,7 +164,6 @@ async function fetchAlbumCards() {
     console.log("User not ready yet");
     return;
   }
-      console.log(currentUserCred.user.email);
   try {
     const querySnapshot = await getDocs(collection(db, "prump@prump.com - albumCards"));
     querySnapshot.forEach((doc) => {
