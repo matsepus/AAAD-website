@@ -112,6 +112,19 @@ body{
 #suggestionLink:hover {
     background: var(--dark-blue-accent);
 }
+#project_2026Link{
+    color: var(--main-text-color);
+    padding: 1.6em;
+    background: linear-gradient(to bottom left, var(--dark-blue-accent), var(--blue-accent), var(--dark-blue-accent));
+
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-style: italic;
+}
+#project_2026Link:hover {
+    background: var(--dark-blue-accent);
+}
 #aboutLink{
     color: var(--secondary-text-color);
     font-size: 1,5rem;
