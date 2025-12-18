@@ -147,7 +147,7 @@ body{
     margin-top: 7.5%;
     border-radius: 0.4rem;
 
-    background-color: var(--main-bg-color);
+    background-color: var(--blue-accent);
 }
 
 .albumArt{
@@ -160,7 +160,7 @@ body{
 
 .reviewText {
     width: 75%;
-    background: var(--blue-accent);
+    background: var(--main-bg-color);
     color: var(--main-text-color);
     padding: 0.2rem;
     border-radius: 0.5rem;
