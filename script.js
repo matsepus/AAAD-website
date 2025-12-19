@@ -94,8 +94,6 @@ onAuthStateChanged(auth, (user) => {
 const mainPageHeader = document.getElementById("mainPageHeader");
 mainPageHeader.value = currentUserCred.user.email + "'s log";
 
-const albumParent = document.getElementById('albumCont'); 
-
 const alnI = document.getElementById('albumNameInput');
 const artnI =document.getElementById('artistNameInput');
 const coverI = document.getElementById('coverURLInput');
@@ -182,6 +180,8 @@ async function fetchAlbumCards() {
 }
 
 function makeAlbumCards(data) {
+  const albumParent = document.getElementById('albumCont'); 
+  
   const albumCard = document.createElement('div');
   albumCard.className = 'albumCard';
 
