@@ -32,6 +32,8 @@
     grid-template-areas: 
     "sgAN sgAN sgAR sgAL sgSU";
 
+    z-index: -1;
+
     opacity: 0;
     transform: translateY(0.5rem);
     
@@ -57,6 +59,7 @@
 #topBar:hover #suggestionInputs{
     transform: translateY(1.5rem);
     opacity: 1;
+    z-index: inherit;
 }
 #suggestionAlbumName{
     grid-area: sgAN;

@@ -71,6 +71,16 @@ body{
     font-weight: bold;
     color: var(--orange-accent);
 }
+#project_2026Header{
+    margin-top: var(--header-top-margin);
+    margin-bottom: var(--header-bottom-margin);
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    font-size: var(--header-font-size);
+    font-weight: bold;
+    color: var(--orange-accent);
+}
 #hamburgerDiv {
     width: 4rem;
     height: 4rem;
