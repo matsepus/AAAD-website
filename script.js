@@ -91,6 +91,9 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
+const mainPageHeader = document.getElementById("mainPageHeader");
+mainPageHeader.value = currentUserCred.user.email + "'s log";
+
 const albumParent = document.getElementById('albumCont'); 
 
 const alnI = document.getElementById('albumNameInput');
