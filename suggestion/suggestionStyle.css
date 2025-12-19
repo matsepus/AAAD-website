@@ -24,6 +24,7 @@
     color: var(--orange-accent);
 }
 #suggestionInputs{
+    pointer-events: none;
     background-color: var(--blue-accent);
     padding-bottom: 1rem;
     opacity: 0;
@@ -31,8 +32,6 @@
     grid-template-columns: repeat(5, 1fr);
     grid-template-areas: 
     "sgAN sgAN sgAR sgAL sgSU";
-
-    z-index: -1;
 
     opacity: 0;
     transform: translateY(0.5rem);
@@ -57,9 +56,9 @@
     font-style: italic;
 }
 #topBar:hover #suggestionInputs{
+    pointer-events: auto;
     transform: translateY(1.5rem);
     opacity: 1;
-    z-index: inherit;
 }
 #suggestionAlbumName{
     grid-area: sgAN;
