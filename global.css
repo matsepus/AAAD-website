@@ -183,6 +183,7 @@ body{
     align-items: center;
     margin-top: 7.5%;
     border-radius: 0.4rem;
+    box-shadow: 0.5rem 0.5rem 1rem var(--dark-blue-accent);
 
     background-color: var(--secondary-bg-color);
 }
