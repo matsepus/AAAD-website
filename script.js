@@ -85,7 +85,7 @@ onAuthStateChanged(auth, (user) => {
     currentUserCred = { user };
     toggleLoginPopup("none");
     fetchAlbumCards();
-    mainPageHeader.value = currentUserCred.email + "'s log";
+    mainPageHeader.innerHTML = currentUserCred.email + "'s log";
   } else {
     toggleLoginPopup("flex");
     console.log("No user logged in");
