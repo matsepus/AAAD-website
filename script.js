@@ -85,7 +85,9 @@ onAuthStateChanged(auth, (user) => {
     currentUserCred = { user };
     toggleLoginPopup("none");
     fetchAlbumCards();
-    mainPageHeader.innerHTML = user.email + "'s log";
+    let headerText = user.email + "'s Logr";
+    headerText = headerText.replace("@prump.com", "");
+    mainPageHeader.innerHTML = headerText;
   } else {
     toggleLoginPopup("flex");
     console.log("No user logged in");
