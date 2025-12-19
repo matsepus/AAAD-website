@@ -85,6 +85,7 @@ onAuthStateChanged(auth, (user) => {
     currentUserCred = { user };
     toggleLoginPopup("none");
     fetchAlbumCards();
+    mainPageHeader.value = currentUserCred.user.email + "'s log";
   } else {
     toggleLoginPopup("flex");
     console.log("No user logged in");
@@ -92,7 +93,6 @@ onAuthStateChanged(auth, (user) => {
 });
 
 const mainPageHeader = document.getElementById("mainPageHeader");
-mainPageHeader.value = currentUserCred.user.email + "'s log";
 
 const alnI = document.getElementById('albumNameInput');
 const artnI =document.getElementById('artistNameInput');
@@ -181,7 +181,7 @@ async function fetchAlbumCards() {
 
 function makeAlbumCards(data) {
   const albumParent = document.getElementById('albumCont'); 
-  
+
   const albumCard = document.createElement('div');
   albumCard.className = 'albumCard';
 
