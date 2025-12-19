@@ -5,11 +5,6 @@
     --hamburgerSize: var(--suggestionTopBarHeight);
     --suggestionNumberOfColumns: calc(var(--number-of-columns) / 2);
 
-    --header-bottom-margin: 0rem;
-    --header-top-margin: calc(var(--top-bar-height) / 2);
-
-    --header-font-size: 3.5rem;
-
 }
 #mobileOnlyHeader{
     display: none;
@@ -17,6 +12,16 @@
 #topBar{
     width: 100%;
     height: var(--suggestionTopBarHeight);
+}
+#suggestionHeader{
+    margin-top: var(--header-top-margin);
+    margin-bottom: var(--header-bottom-margin);
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    font-size: var(--header-font-size);
+    font-weight: bold;
+    color: var(--orange-accent);
 }
 #suggestionInputs{
     background-color: var(--blue-accent);
@@ -68,16 +73,6 @@
     color: var(--main-text-color);
     font-weight: bold;
     cursor: pointer;
-}
-#suggestionHeader{
-    margin-top: var(--header-top-margin);
-    margin-bottom: var(--header-bottom-margin);
-    height: 2rem;
-    line-height: 2rem;
-    text-align: center;
-    font-size: var(--header-font-size);
-    font-weight: bold;
-    color: var(--orange-accent);
 }
 #hamburgerDiv {
     width: var(--hamburgerSize);

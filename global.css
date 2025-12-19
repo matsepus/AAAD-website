@@ -8,6 +8,10 @@
     --secondary-bg-color: #a0a8c0;
     --secondary-text-color: #333333;
 
+    --header-bottom-margin: 0rem;
+    --header-top-margin: calc(var(--top-bar-height) / 2);
+    --header-font-size: 3.5rem;
+
     --number-of-columns: 8;
     --top-bar-height: 4rem;
     --log-left-top: 0.5rem;
@@ -56,6 +60,16 @@ body{
 #logoLink img{
     width: 100%;
     height: auto;
+}
+#mainPageHeader{
+    margin-top: var(--header-top-margin);
+    margin-bottom: var(--header-bottom-margin);
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    font-size: var(--header-font-size);
+    font-weight: bold;
+    color: var(--orange-accent);
 }
 #hamburgerDiv {
     width: 4rem;
