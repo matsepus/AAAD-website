@@ -57,6 +57,10 @@
         <input type="button" value="X" id="closeAddEntryBtn">
         <input type="text" placeholder="Write the Album name here!" class="addEntryContent" id="albumNameInput">
         <input type="text" placeholder="Artist name goes here!" class="addEntryContent" id="artistNameInput">
+        <div id="ratingSlideCont">
+            <div id="ratingValue"></div>
+            <input type="range" min="1" max="100" value="50" id="ratingSlider">
+        </div>
         <select class="addEntryContent" id="genreDropdown">
             <option value="" disabled selected>Select Genre</option>
             <option value="Pop">Pop</option>
@@ -71,11 +75,13 @@
             <option value="Folk">Folk</option>
             <option value="R&B">R&B</option>
             <option value="Indie">Indie</option>
+            <option value="Midwest Emo">Midwest Emo</option>
         </select>
-        <input type="text" value="https://upload.wikimedia.org/wikipedia/en/f/f8/The_Strokes_-_The_New_Abnormal.png" class="addEntryContent" id="coverURLInput">
-        <input type="text" value="https://www.w3schools.com/css/css3_variables.asp" class="addEntryContent" id="linkInput">
+        <input type="text" placeholder="Cover Image URL" class="addEntryContent" id="coverURLInput">
+        <input type="text" placeholder="Link the album on Spotify" class="addEntryContent" id="linkInput">
         <textarea placeholder="TestReview" oninput="autoSize(this)" class="addEntryContent" id="reviewInput"></textarea>
         <input type="button" value="Send Input" class="addEntryContent" id="inputBtn">
+
     </div>
 
 
