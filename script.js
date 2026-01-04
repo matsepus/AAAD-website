@@ -142,6 +142,14 @@ closeAddEntry.addEventListener("click", () => {
   sideMenu.classList.toggle("expanded");
 });
 
+var slider = document.getElementById("ratingSlider");
+var output = document.getElementById("ratingValue");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
 
 async function sendInput() {
   addEntryOverlay.style.display = "none";
