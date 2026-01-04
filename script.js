@@ -143,12 +143,12 @@ closeAddEntry.addEventListener("click", () => {
 });
 
 var slider = document.getElementById("ratingSlider");
-var output = document.getElementById("ratingValue");
-output.innerHTML = slider.value; // Display the default slider value
+var ratingValue = document.getElementById("ratingValue");
+ratingValue.innerHTML = slider.value; // Display the default slider value
 
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
-  output.innerHTML = this.value;
+  ratingValue.innerHTML = this.value;
 }
 
 async function sendInput() {
@@ -158,6 +158,7 @@ async function sendInput() {
     const docRef = await addDoc(collection(db, currentUserCred.user.email + " - albumCards"), {
       albumName: alnI.value,
       artistName: artnI.value,
+      rating: ratingValue.innerHTML,
       coverURL: coverI.value,
       review: revI.value,
       link: linkI.value,
