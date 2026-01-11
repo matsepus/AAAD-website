@@ -176,16 +176,18 @@ async function fetchAlbumCards() {
     console.log("User not ready yet");
     return;
   }
-      console.log(currentUserCred.user.email);
+
   try {
-    const querySnapshot = await getDocs(collection(db, currentUserCred.user.email + " - albumCards"));
+    const q = query(
+      collection(db, currentUserCred.user.email + " - albumCards"),
+      orderBy("timestamp", "desc") // nyeste først
+    );
+
+    const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      //createAlbumCard(data);
-      makeAlbumCards(data);
+      makeAlbumCards(doc.data());
     });
-  }
-    catch (e) {
+  } catch (e) {
     console.error("Error fetching documents: ", e);
   }
 }
