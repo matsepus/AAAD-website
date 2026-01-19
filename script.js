@@ -169,6 +169,7 @@ async function sendInput() {
   catch (e) {
     console.error("Error adding document: ", e);
   }
+location.reload();
 }
 
 async function fetchAlbumCards() {
@@ -220,8 +221,6 @@ function makeAlbumCards(data) {
   albumCard.appendChild(albumName);
   albumCard.appendChild(artistName);
   albumCard.appendChild(reviewText);
-
-  location.reload();
 }
 
 
