@@ -189,7 +189,8 @@ async function fetchAlbumCards() {
     });
   } catch (e) {
     console.error("Error fetching documents: ", e);
-  }
+  }  
+  addExpandReview();
 }
 
 function makeAlbumCards(data) {
@@ -220,8 +221,7 @@ function makeAlbumCards(data) {
   albumCard.appendChild(artistName);
   albumCard.appendChild(reviewText);
 
-  location.reload
-  addExpandReview();
+  location.reload();
 }
 
 
