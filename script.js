@@ -155,9 +155,7 @@ async function sendInput() {
   addEntryOverlay.style.display = "none";
   console.log("Sending input to Firestore...");
   try {
-    const today = new Date();
-    const dateOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-    const docRef = await setDoc(collection(db, currentUserCred.user.email + " - albumCards", alnI.value + " - " + dateOnly), {
+    const docRef = await setDoc(collection(db, currentUserCred.user.email + " - albumCards", alnI.value), {
       albumName: alnI.value,
       artistName: artnI.value,
       rating: ratingValue.innerHTML,
