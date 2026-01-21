@@ -169,7 +169,7 @@ async function sendInput() {
   catch (e) {
     console.error("Error adding document: ", e);
   }
-location.reload();
+//location.reload();
 }
 
 async function fetchAlbumCards() {
