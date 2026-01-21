@@ -154,22 +154,25 @@ slider.oninput = function() {
 async function sendInput() {
   addEntryOverlay.style.display = "none";
   console.log("Sending input to Firestore...");
+
+  const customId = alnI.value; // ditt egendefinerte ID
+  const docRef = doc(db, currentUserCred.user.email + " - albumCards", customId);
+
   try {
-    const docRef = await setDoc(collection(db, currentUserCred.user.email + " - albumCards", alnI.value), {
+    await setDoc(docRef, {
       albumName: alnI.value,
       artistName: artnI.value,
       rating: ratingValue.innerHTML,
       coverURL: coverI.value,
       review: revI.value,
       link: linkI.value,
-      timestamp: new Date()
+      timestamp: new Date() // evt. bare dato hvis du vil
     });
-    console.log("Document written with ID: ", docRef.id);
+    console.log("Document written with custom ID:", customId);
+  } catch (e) {
+    console.error("Error adding document:", e);
   }
-  catch (e) {
-    console.error("Error adding document: ", e);
-  }
-//location.reload();
+  //location.reload();
 }
 
 async function fetchAlbumCards() {
