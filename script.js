@@ -1,7 +1,7 @@
 // Import Firebase modules directly from CDN
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
-import { getFirestore, collection, addDoc, getDocs, query, orderBy} from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, setDoc, getDocs, query, orderBy} from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
 
 // Firebase config
@@ -155,7 +155,7 @@ async function sendInput() {
   addEntryOverlay.style.display = "none";
   console.log("Sending input to Firestore...");
   try {
-    const docRef = await addDoc(collection(db, currentUserCred.user.email + " - albumCards"), {
+    const docRef = await setDoc(collection(db, currentUserCred.user.email + " - albumCards", albumName + " - " + new Date()), {
       albumName: alnI.value,
       artistName: artnI.value,
       rating: ratingValue.innerHTML,
