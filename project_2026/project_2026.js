@@ -164,19 +164,26 @@ async function fetchAlbumCards() {
     console.log("User not ready yet");
     return;
   }
+
   try {
-    const querySnapshot = await getDocs(collection(db, "prump@prump.com - albumCards"));
+    const q = query(
+      collection(db, currentUserCred.user.email + " - albumCards"),
+      orderBy("timestamp", "desc") // nyeste først
+    );
+
+    const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      makeAlbumCards(data);
+      makeAlbumCards(doc.data());
     });
-  }
-    catch (e) {
+  } catch (e) {
     console.error("Error fetching documents: ", e);
-  }
+  }  
+  addExpandReview();
 }
 
 function makeAlbumCards(data) {
+  const albumParent = document.getElementById('albumCont'); 
+
   const albumCard = document.createElement('div');
   albumCard.className = 'albumCard';
 
@@ -201,10 +208,8 @@ function makeAlbumCards(data) {
   albumCard.appendChild(albumName);
   albumCard.appendChild(artistName);
   albumCard.appendChild(reviewText);
-
-  location.reload
-  addExpandReview();
 }
+
 
 
 function addExpandReview() {

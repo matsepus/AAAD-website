@@ -165,7 +165,6 @@ async function sendInput() {
       rating: ratingValue.innerHTML,
       coverURL: coverI.value,
       review: revI.value,
-      link: linkI.value,
       timestamp: new Date() // evt. bare dato hvis du vil
     });
     console.log("Document written with custom ID:", customId);
