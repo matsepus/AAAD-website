@@ -167,7 +167,7 @@ async function fetchAlbumCards() {
 
   try {
     const q = query(
-      collection(db, currentUserCred.user.email + " - albumCards"),
+      collection(db, "prump@prump.com - albumCards"),
       orderBy("timestamp", "desc") // nyeste først
     );
 
