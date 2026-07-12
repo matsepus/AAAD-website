@@ -9,7 +9,7 @@
 
     display: grid;
     grid-template-areas: "daysNumber project_2026Header reviewNumber";
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
 }
 
 #daysNumber {

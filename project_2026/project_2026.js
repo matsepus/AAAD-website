@@ -91,6 +91,15 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
+const daysNumber = document.getElementById("daysNumber");
+const reviewNumber = document.getElementById("reviewNumber");
+
+const startDate = new Date("2026-01-01");
+const today = new Date();
+const diffTime = Math.abs(today - startDate);
+const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+daysNumber.textContent = `Days so far this year: ${diffDays}`;
+
 const albumParent = document.getElementById('albumCont'); 
 
 const alnI = document.getElementById('albumNameInput');
