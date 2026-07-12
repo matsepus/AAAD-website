@@ -8,7 +8,7 @@
     z-index: 10;
 
     display: grid;
-    grid-template-areas: "daysNumber" "project_2026Header" "reviewNumber";
+    grid-template-areas: "daysNumber" "project2026_Header" "project_2026Header" "project_2026Header" "reviewNumber";
 }
 
 #daysNumber {
@@ -21,7 +21,6 @@
 #reviewNumber {
     grid-area: reviewNumber;
     text-align: center;
-    font-size: var(--header-font-size);
     font-weight: bold;
     color: var(--orange-accent);
 }
@@ -29,6 +28,7 @@
 #project_2026Header {
     grid-area: project_2026Header;
     text-align: center;
+    font-size: var(--header-font-size);
     font-weight: bold;
     color: var(--orange-accent);
 }
