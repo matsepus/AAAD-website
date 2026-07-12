@@ -1,7 +1,7 @@
 // Import Firebase modules directly from CDN
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
-import { getFirestore, collection, doc, setDoc, getDocs, query, orderBy} from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+import { getFirestore, collection, doc, setDoc, getDocs, query, orderBy, getCountFromServer} from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
 
 // Firebase config
@@ -99,6 +99,11 @@ const today = new Date();
 const diffTime = Math.abs(today - startDate);
 const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 daysNumber.textContent = `Days so far this year: ${diffDays}`;
+
+const coll = collection(db, "prump@prump.com - albumCards");
+const snapshot = await getCountFromServer(coll);
+const count = snapshot.data().count;
+reviewNumber.textContent = `Albums Reviewed: ${count}`;
 
 const albumParent = document.getElementById('albumCont'); 
 
