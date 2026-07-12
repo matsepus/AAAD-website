@@ -7,5 +7,6 @@
     left: 0;
     z-index: 10;
 
-    display: flex;
+    display: grid;
+    grid-template-columns: "daysNumber" "project_2026Header" "reviewNumber";
 }
