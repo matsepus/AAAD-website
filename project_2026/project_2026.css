@@ -1,0 +1,11 @@
+#topBar{
+    width: 100%;
+    height: var(--top-bar-height);
+    background-color: var(--blue-accent);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    display: flex;
+}
